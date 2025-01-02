@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Every failure is leading towards success.">
+    <meta name="keywords"  content="JY Blog, Johnny的博客, iOS, Apple, iPhone">
+    <meta name="theme-color" content="#000000">
+    
+    <title>FPGA控制的多人在线游戏 - Johnny的博客 | JY Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <!-- Safari Webpage Icon    by-BY -->
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA-zh/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">JY Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li>
+                        <a href="/">Home</a>
+                    </li> -->
+                    <li>
+                        
+                        <a href="/">Home</a>
+                        
+                    </li>
+                    
+                    
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                    <!-- Language Switch Button -->
+                    <li>
+
+                        
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-debug.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-debug.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#C#" title="C#">C#</a>
+                        
+                        <a class="tag" href="/tags/#Unity" title="Unity">Unity</a>
+                        
+                        <a class="tag" href="/tags/#Python" title="Python">Python</a>
+                        
+                        <a class="tag" href="/tags/#AWS" title="AWS">AWS</a>
+                        
+                        <a class="tag" href="/tags/#Project" title="Project">Project</a>
+                        
+                    </div>
+                    <h1>FPGA控制的多人在线游戏</h1>
+                    
+                    
+                    <h2 class="subheading">2023 校内项目</h2>
+                    
+                    <span class="meta">Posted by JY on March 2, 2023</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h1 id="信息处理报告">信息处理报告</h1>
+
+<h2 id="系统目标">系统目标</h2>
+
+<p>我们的目标是创建一个使用 FPGA 作为方向控制器的引人入胜的多人游戏。通过利用 AWS 服务器、本地 FPGA 处理和 Unity 基础设施，团队开发了一个合作型 2D 竞技游戏。</p>
+
+<h2 id="游戏描述">游戏描述</h2>
+
+<p>我们在 Unity 上使用 C# 开发了一个合作实时多人游戏。</p>
+<ul>
+  <li>该游戏支持两名玩家在同一台笔记本电脑上实时游戏，并且可以通过增加控制节点来扩展以容纳更多玩家。</li>
+  <li>目标是与随机生成的怪物战斗。玩家必须合作击败怪物，任何玩家死亡游戏就结束。</li>
+</ul>
+
+<p>我们的目标是复制类似于在 PlayStation 上玩多人游戏的控制台多人游戏体验。</p>
+
+<h2 id="性能指标">性能指标</h2>
+
+<h3 id="低延迟">低延迟</h3>
+
+<p>我们使用了 UDP 通信协议，并在数据传输中使用了低采样率以减少延迟。FPGA 命令与游戏中实现之间的延迟约为 300ms，提高了用户体验。</p>
+
+<h3 id="高精度">高精度</h3>
+
+<p>我们增加了一个 FIR 滤波器以减少噪声，并设置了 <code class="language-plaintext highlighter-rouge">data_x</code> 和 <code class="language-plaintext highlighter-rouge">data_y</code> 的最佳范围来决定移动方向。</p>
+
+<h3 id="多人合作游戏">多人合作游戏</h3>
+
+<p>使用 AWS 服务器，我们将信息传输到 Unity 计算机，以在同一屏幕上显示两名玩家的实时控制，模拟 PS5 或 Nintendo Switch 的体验。</p>
+
+<h3 id="移动方向的高灵活性">移动方向的高灵活性</h3>
+
+<p>玩家可以在 X、Y 和对角方向上控制他们的游戏角色。</p>
+
+<h2 id="设计决策">设计决策</h2>
+
+<p>我们将项目分为三个阶段：</p>
+
+<ol>
+  <li>FPGA 设计和数据处理</li>
+  <li>服务器端设计</li>
+  <li>Unity 游戏开发</li>
+</ol>
+
+<p>我们根据团队成员的专长将他们分配到每个阶段，以便同时进行工作。</p>
+
+<h2 id="fpga-设计和数据处理">FPGA 设计和数据处理</h2>
+
+<h3 id="使用-fir-滤波数据">使用 FIR 滤波数据</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define N 49 
+</span><span class="kt">float</span> <span class="n">COEFF</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mo">0046</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0074</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0024</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0071</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0033</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0001</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">00</span><span class="mi">94</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0040</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0044</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0133</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0030</span><span class="p">,</span> 
+<span class="mi">0</span><span class="p">.</span><span class="mo">0114</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">017</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0011</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0223</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0225</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">010</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">03</span><span class="mi">96</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0263</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">033</span><span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0752</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">02</span><span class="mi">89</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">1204</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">2879</span><span class="p">,</span> 
+<span class="mi">0</span><span class="p">.</span><span class="mi">6369</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mi">2879</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">1204</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">02</span><span class="mi">89</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0752</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">033</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0263</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">03</span><span class="mi">96</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">010</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0225</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0223</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0011</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">017</span><span class="mi">9</span><span class="p">,</span> 
+<span class="mi">0</span><span class="p">.</span><span class="mo">0114</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0030</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0133</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0044</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0040</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">00</span><span class="mi">94</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0001</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0033</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0071</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mo">0024</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0074</span><span class="p">,</span><span class="mi">0</span><span class="p">.</span><span class="mo">0046</span><span class="p">};</span> 
+
+<span class="cp">#define OFFSET -32 
+#define PWM_PERIOD 16 
+#define QUITLETTER '~' 
+#define CHARLIM 64 
+</span>
+<span class="n">alt_32</span> <span class="nf">firFilter</span><span class="p">(</span><span class="n">alt_32</span> <span class="o">*</span><span class="n">sample</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">alt_32</span> <span class="n">input</span><span class="p">){</span> 
+ <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> 
+ <span class="n">alt_32</span> <span class="n">results</span><span class="p">;</span> 
+ <span class="n">results</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+ <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">index</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span> 
+   <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span> 
+  <span class="p">}</span> 
+ <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">index</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span> 
+  <span class="n">alt_32</span> <span class="n">num</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="n">index</span><span class="o">-</span><span class="n">i</span><span class="p">];</span> 
+  <span class="n">results</span> <span class="o">=</span> <span class="n">results</span> <span class="o">+</span> <span class="n">num</span><span class="o">/</span><span class="n">n</span><span class="p">;</span> 
+ <span class="p">}</span> 
+
+ <span class="n">results</span> <span class="o">=</span> <span class="n">results</span> <span class="o">+</span> <span class="n">input</span><span class="o">/</span><span class="n">n</span><span class="p">;</span> 
+ <span class="n">sample</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">input</span><span class="p">;</span> 
+ <span class="k">return</span> <span class="n">results</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>我们使用 FIR 滤波数据而不是原始数据来减少错误。MATLAB 生成了 49 个系数。该函数接受一个样本数组、样本数量（<code class="language-plaintext highlighter-rouge">n</code>）和一个新输入值，并返回滤波后的输出值。尽管增加滤波器会增加延迟，但系统其余部分的延迟优化使其保持较低水平，因此我们保留了滤波器以获取其降噪性能。</p>
+
+<h3 id="实现七段显示">实现七段显示</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="n">loop</span><span class="p">){</span> 
+    <span class="n">printf</span><span class="p">(</span><span class="s">"&lt;--&gt; Please Type Your Username (6 bits maximum) and Press Enter: &lt;--&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
+
+    <span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">CHARLIM</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>  
+    <span class="kt">char</span> <span class="n">prevLetter</span> <span class="o">=</span> <span class="sc">'!'</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">running</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">alt_getchar</span><span class="p">();</span>   
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">prevLetter</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">running</span><span class="p">);</span> 
+
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX5_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX4_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX3_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX2_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX1_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX0_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">]));</span>
+
+    <span class="c1">// print score </span>
+    <span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">CHARLIM</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span> 
+    <span class="kt">char</span> <span class="n">prevLetter</span> <span class="o">=</span> <span class="sc">'!'</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">running</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">alt_getchar</span><span class="p">();</span> 
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">prevLetter</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">running</span><span class="p">);</span> 
+
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX5_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX4_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX3_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX2_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX1_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX0_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">]));</span>
+</code></pre></div></div>
+
+<p>我们设计了一个可以显示字符和数字的七段显示器。它在游戏的两个部分中使用：</p>
+
+<ol>
+  <li>游戏开始时显示用户名。</li>
+  <li>游戏结束时显示分数。</li>
+</ol>
+
+<h3 id="实现按钮">实现按钮</h3>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span> <span class="o">=</span> <span class="n">IORD_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">BUTTON_BASE</span><span class="p">);</span> 
+<span class="k">if</span><span class="p">(</span><span class="n">button</span> <span class="o">==</span> <span class="mi">0</span><span class="n">b10</span><span class="p">){</span><span class="c1">//press key0 to stop </span>
+ <span class="kt">char</span> <span class="n">stop</span><span class="o">=</span><span class="sc">'a'</span><span class="p">;</span> 
+
+    <span class="n">still_in_game</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// if will finish the game and print the mark </span>
+    <span class="n">alt_up_accelerometer_spi_read_x_axis</span><span class="p">(</span><span class="n">acc_dev</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">x_read</span><span class="p">);</span> 
+    <span class="n">alt_up_accelerometer_spi_read_y_axis</span><span class="p">(</span><span class="n">acc_dev</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">y_read</span><span class="p">);</span> 
+    <span class="n">alt_up_accelerometer_spi_read_z_axis</span><span class="p">(</span><span class="n">acc_dev</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">z_read</span><span class="p">);</span> 
+    <span class="n">x_read</span> <span class="o">=</span> <span class="n">firFilter</span><span class="p">(</span><span class="o">&amp;</span> <span class="n">samples_x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x_read</span><span class="p">);</span> 
+    <span class="n">y_read</span> <span class="o">=</span> <span class="n">firFilter</span><span class="p">(</span><span class="o">&amp;</span> <span class="n">samples_y</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">y_read</span><span class="p">);</span> 
+    <span class="n">z_read</span> <span class="o">=</span> <span class="n">firFilter</span><span class="p">(</span><span class="o">&amp;</span> <span class="n">samples_z</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">z_read</span><span class="p">);</span> 
+    <span class="kt">char</span> <span class="n">x_dir</span><span class="p">,</span> <span class="n">y_dir</span><span class="p">;</span> 
+    <span class="n">x_dir</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span> 
+    <span class="n">y_dir</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span> 
+    <span class="n">alt_printf</span><span class="p">(</span><span class="s">"%c%c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x_dir</span><span class="p">,</span> <span class="n">y_dir</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>按下 key 0 停止游戏并在屏幕上显示分数。</p>
+
+<h3 id="nios-和-python-之间的数据传输">Nios 和 Python 之间的数据传输</h3>
+
+<p>运动数据被收集并传输到 Python 进行客户端处理。为了解决数据传输瓶颈，我们添加了 “usleep” 函数来创建传输时间间隔，在不影响数据的情况下显著提高了性能和稳定性。</p>
+
+<p>该命令作为使用 Python subprocess 库在内部创建的 bash 系统调用中执行。按下按钮后，一个字符串 “aa” 会从 Nios 发送出去，接收到它后，正在运行的子进程终止，另一个在 <code class="language-plaintext highlighter-rouge">send_on_jtag1(cmd)</code> 函数中打开，以接收从数据库返回的分数数据，然后将其打印在 FPGA 上。</p>
+
+<h2 id="服务器和数据库">服务器和数据库</h2>
+
+<h3 id="服务器">服务器</h3>
+
+<p>服务器在 AWS EC2 实例上设置，运行 Ubuntu 20.04。我们选择 AWS EC2 是因为其可扩展性和可靠的基础设施。必要的软件，包括 Apache Web 服务器、Python 3.8 和 UMP，已经安装。AWS CLI 允许本地数据库访问</p>
+
+<h4 id="通信协议">通信协议</h4>
+
+<p>我们尝试了几种通信协议：</p>
+
+<ol>
+  <li>使用 DynamoDB 延迟显著。</li>
+  <li>TCP 减少了延迟，但仍有 2-3 秒的延迟。</li>
+  <li>UDP 将延迟降低到 1 秒以下。</li>
+</ol>
+
+<p>我们选择了低延迟的 UDP 协议，这对游戏至关重要。</p>
+
+<h4 id="关于-tcp-和-udp-的更多信息">关于 TCP 和 UDP 的更多信息</h4>
+
+<p>TCP 的可靠性和面向连接的特性增加了开销，导致延迟。UDP 作为无连接协议，传输数据包更快，延迟更低，非常适合像游戏这样的实时应用。然而，UDP 的不可靠性可能导致数据包丢失，导致错误或故障。可能需要数据包丢失检测、错误修正和拥塞控制等技术来提高性能。</p>
+
+<h3 id="数据">数据</h3>
+
+<p>我们的游戏是 2D 的，攻击是自动的，所以我们只需要传输玩家的移动信息。FPGA 处理并输出两个数字，分别表示垂直和水平速度。</p>
+
+<h4 id="python-代码">Python 代码</h4>
+
+<h5 id="连接">连接</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>  <span class="c1"># connect and remember three clients 
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">initializing, please connect player1</span><span class="sh">"</span><span class="p">)</span> 
+    <span class="n">msg1</span><span class="p">,</span> <span class="n">add1</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">initializing, please connect player2</span><span class="sh">"</span><span class="p">)</span> 
+    <span class="n">msg2</span><span class="p">,</span> <span class="n">add2</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">initializing, please connect destination</span><span class="sh">"</span><span class="p">)</span> 
+    <span class="n">msg3</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+
+    <span class="k">return</span> <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> 
+
+<span class="k">def</span> <span class="nf">connect</span><span class="p">():</span>  <span class="c1"># refuse and retry the connection when one player appears multiple times  
+</span>    <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">init</span><span class="p">()</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">add1</span> <span class="o">==</span> <span class="n">add2</span><span class="p">):</span> 
+            <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">two player have the same address</span><span class="sh">"</span><span class="p">)</span> 
+            <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">init</span><span class="p">()</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">add1</span> <span class="o">==</span> <span class="n">add3</span> <span class="ow">or</span> <span class="n">add2</span> <span class="o">==</span> <span class="n">add3</span><span class="p">):</span> 
+            <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">destination and player have the same address</span><span class="sh">"</span><span class="p">)</span> 
+            <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">init</span><span class="p">()</span> 
+    <span class="k">return</span> <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> 
+
+<span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>这段代码进行连接。由于我们无法知道客户端的公共 IP，服务器会接收每个客户端的一条消息并记住 IP。如果一个 IP 多次出现，服务器将拒绝并重试连接。</p>
+
+<h5 id="传输">传输</h5>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span> 
+    <span class="c1">#cadd below is the client process address 
+</span>    <span class="n">cmsg</span><span class="p">,</span> <span class="n">cadd</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">cmsg</span> <span class="o">=</span> <span class="n">cmsg</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span> 
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">cmsg</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># get first 3 characters of string
+</span>
+    <span class="c1"># Information like scores and Health is transmitted using Database, so the transmission is one-way. We add a header in front of the message so that the game can distinguish between player1 and player2.
+</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">cadd</span> <span class="o">==</span> <span class="n">add1</span><span class="p">):</span> 
+        <span class="n">cmsg</span> <span class="o">=</span> <span class="sh">'</span><span class="s">C1:</span><span class="sh">'</span> <span class="o">+</span> <span class="n">cmsg</span> 
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">C1:</span><span class="sh">"</span> <span class="o">+</span> <span class="n">cmsg</span><span class="p">)</span> 
+        <span class="n">server_socket</span><span class="p">.</span><span class="nf">sendto</span><span class="p">(</span><span class="n">cmsg</span><span class="p">.</span><span class="nf">encode</span><span class="p">(),</span> <span class="n">add3</span><span class="p">)</span> 
+
+    <span class="nf">if </span><span class="p">(</span><span class="n">cadd</span> <span class="o">==</span> <span class="n">add2</span><span class="p">):</span> 
+        <span class="n">cmsg</span> <span class="o">=</span> <span class="sh">'</span><span class="s">C2:</span><span class="sh">'</span> <span class="o">+</span> <span class="n">cmsg</span> 
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">C2:</span><span class="sh">"</span> <span class="o">+</span> <span class="n">cmsg</span><span class="p">)</span> 
+        <span class="n">server_socket</span><span class="p">.</span><span class="nf">sendto</span><span class="p">(</span><span class="n">cmsg</span><span class="p">.</span><span class="nf">encode</span><span class="p">(),</span> <span class="n">add3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="数据库">数据库</h3>
+
+<p>游戏数据库旨在为多用户存储各种与游戏相关的数据。数据库托管在 Amazon Web Services (AWS) DynamoDB 上，这是一种 NoSQL 数据库服务。</p>
+
+<p>DynamoDB 的优点：</p>
+
+<ol>
+  <li>无论数据结构如何，都可以处理不同类型的数据，在游戏服务器中创造了灵活性。</li>
+  <li>低延迟，非常适合我们实时多人游戏服务器的快速响应时间需求。</li>
+</ol>
+
+<p>游戏数据库的功能包括：</p>
+
+<ol>
+  <li><strong>检索玩家数据:</strong> `get_player_data` 函数检索给定玩家 ID 的数据。</li>
+  <li><strong>添加新玩家及其登录数据:</strong>  `new_player_data` 和 `new_login_data` 函数分别添加新玩家数据和登录凭证。</li>
+  <li><strong>更新玩家数据：</strong> `update_player_data` 函数更新数据库中的玩家数据。</li>
+  <li><strong>扫描表格：</strong> `show_table` 函数输出指定表的所有项目。</li>
+</ol>
+
+<h4 id="延迟测试">延迟测试</h4>
+
+<p>延迟由软件和硬件部分组成。</p>
+
+<p><strong>软件部分：</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>协议/延迟  测试1    测试2    测试3    测试4    测试5    平均
+UDP       165ms     343.2ms   263ms     302.3ms   187.2ms   252.14ms
+</code></pre></div></div>
+
+<p><strong>硬件部分:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>运行50次：
+
+平均值  最大值     最小值
+0.62 ms  250.23 ms 0.53 ms
+
+</code></pre></div></div>
+
+<h3 id="unity-游戏开发">Unity 游戏开发</h3>
+
+<p>为了控制玩家的移动，FPGA 输出被解析为两个值并通过 UDP 传输。从 UDP 服务器收集的数据被写入两个 txt 文件以控制玩家的移动。游戏结束后，分数被写入另一个 txt 文件，更新到数据库，并显示在 FPGA 上。</p>
+
+<p>测试流程包括对每个组件的单元测试和在将它们集成到最终系统中时的迭代改进。</p>
+
+<h2 id="相关链接">相关链接</h2>
+
+<p>要查看最终的系统交付成果和演示，请参阅我们与本次课程作业一起提交的视频。它展示了现场游戏以及对实现的评论。Group14</p>
+
+<p><a href="http://host.py/">相关代码</a></p>
+
+<p><a href="https://imperiallondon-my.sharepoint.com/:v:/g/personal/bz1521_ic_ac_uk/EQWuP7PvxvNBj7r5vfuSiUABnPlbUIslF7B5U7uDMGvb-w">成果展示</a></p>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA-en/" data-toggle="tooltip" data-placement="top" title="Multiplayer Online Game Controlled by FPGA">
+                        Previous<br>
+                        <span>Multiplayer Online Game Controlled by FPGA</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2023/05/02/Compiler-en/" data-toggle="tooltip" data-placement="top" title="A compiler for the C language">
+                        Next<br>
+                        <span>A compiler for the C language</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                <!--Gitalk评论start  -->
+                
+                <!-- 引入Gitalk评论插件  -->
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                <div id="gitalk-container"></div>
+                <!-- 引入一个生产md5的js，用于对id值进行处理，防止其过长 -->
+                <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
+                <script src="/js/md5.min.js"></script>
+                <script type="text/javascript">
+                    var gitalk = new Gitalk({
+                    clientID: 'Ov23liLs16lTaGFmf9vR',
+                    clientSecret: '690847c707f16bf3697e4446e67f90f9dddc6161',
+                    repo: 'Johnny1882.github.io',
+                    owner: 'Johnny1882',
+                    admin: ['Johnny1882'],
+                    distractionFreeMode: true,
+                    id: md5(location.pathname),
+                    });
+                    gitalk.render('gitalk-container');
+                </script>
+                
+                <!-- Gitalk end -->
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+                				<a href="/tags/#Machine Learning" title="Machine Learning" rel="3">
+                                    Machine Learning
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Project" title="Project" rel="7">
+                                    Project
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#C#" title="C#" rel="8">
+                                    C#
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Unity" title="Unity" rel="6">
+                                    Unity
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Python" title="Python" rel="2">
+                                    Python
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#AWS" title="AWS" rel="2">
+                                    AWS
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#Pytorch" title="Pytorch" rel="2">
+                                    Pytorch
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Internship" title="Internship" rel="4">
+                                    Internship
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Django" title="Django" rel="2">
+                                    Django
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Sqlite" title="Sqlite" rel="2">
+                                    Sqlite
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#LLM" title="LLM" rel="2">
+                                    LLM
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Azure" title="Azure" rel="2">
+                                    Azure
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Github" title="Github" rel="2">
+                                    Github
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#游戏开发" title="游戏开发" rel="2">
+                                    游戏开发
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Data Stream" title="Data Stream" rel="2">
+                                    Data Stream
+                                </a>
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="https://www.linkedin.com/in/junyi-wu-a83133249/">LinkedIn</a></li>
+                    
+                        <li><a href="https://github.com/Johnny1882">github</a></li>
+                    
+                        <li><a href="https://apple.com">Apple</a></li>
+                    
+                        <li><a href="https://developer.apple.com/">Apple Developer</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/Johnny1882">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; JY Blog 2025
+                    <br>
+                    Theme on <a href="https://github.com/Johnny1882/Johnny1882.github.io.git">GitHub</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=Johnny1882&repo=Johnny1882.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'qiubaiying.top';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

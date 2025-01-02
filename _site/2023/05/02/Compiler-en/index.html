@@ -10,7 +10,7 @@
     <meta name="keywords"  content="JY Blog, Johnny的博客, iOS, Apple, iPhone">
     <meta name="theme-color" content="#000000">
     
-    <title>游戏架构：ECS - Johnny的博客 | JY Blog</title>
+    <title>A compiler for the C language - Johnny的博客 | JY Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2024/08/01/%E5%85%B3%E4%BA%8EUnity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%86%E8%A7%A3/">
+    <link rel="canonical" href="http://localhost:4000/2023/05/02/Compiler-en/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -56,6 +56,7 @@
     <!-- ga & ba script hoook -->
     <script></script>
 </head>
+
 
 
 <!-- hack iOS CSS :active style -->
@@ -117,9 +118,13 @@
                     
                         
                     
+                        
+                    
 
                     <!-- Language Switch Button -->
                     <li>
+
+                        
                         
                     </li>
                 </ul>
@@ -185,13 +190,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-ios10.jpg" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-github-cup.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-ios10.jpg')
+        background-image: url('/img/post-bg-github-cup.jpg')
     }
 
     
@@ -204,19 +209,17 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#Unity" title="Unity">Unity</a>
+                        <a class="tag" href="/tags/#compiler" title="compiler">compiler</a>
                         
-                        <a class="tag" href="/tags/#C#" title="C#">C#</a>
-                        
-                        <a class="tag" href="/tags/#游戏开发" title="游戏开发">游戏开发</a>
+                        <a class="tag" href="/tags/#Project" title="Project">Project</a>
                         
                     </div>
-                    <h1>游戏架构：ECS</h1>
+                    <h1>A compiler for the C language</h1>
                     
                     
-                    <h2 class="subheading">ECS的介绍和解读</h2>
+                    <h2 class="subheading">2023 Compiler Coursework</h2>
                     
-                    <span class="meta">Posted by JY on August 1, 2024</span>
+                    <span class="meta">Posted by JY on May 2, 2023</span>
                 </div>
             </div>
         </div>
@@ -234,102 +237,120 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h2 id="前言">前言</h2>
+				<p>This program reads <strong>C source code</strong> from a file and writes <strong>RISC-V assembly</strong> to another file.</p>
 
-<p>最近在实习中接触到了很多游戏相关的架构和知识，其中就包括了ECS架构。但知识多且有些分散，故此梳理一下。</p>
-
-<h2 id="正文">正文</h2>
-
-<h3 id="ecs简介">ECS简介</h3>
-<p>大型项目中，用的最多的应该是ECS架构（Entity Component System）</p>
-
-<p>ECS，顾名思义，就是由Entity，Component和System组成的结构。当然，实际情况复杂得多，但核心仍是这三个概念：</p>
-
-<h4 id="entity">Entity：</h4>
-
-<ul>
-  <li>一个游戏object或者concept</li>
-  <li>包含一个ID，唯一的标识符</li>
-  <li>自身没有逻辑或者数据</li>
-</ul>
-
-<h4 id="component">Component：</h4>
-
-<ul>
-  <li>纯数据，没有逻辑</li>
-  <li>代表entity的一个特征</li>
-</ul>
-
-<h4 id="system"><strong>System：</strong></h4>
-
-<ul>
-  <li>包揽逻辑，一个system通常处理特定的Component</li>
-  <li>System 通常由游戏循环驱动来修改游戏对象的状态</li>
-  <li>遍历entity并更新他们的状态
-<!-- - System中的`OnProcess` or `ProcessList`将会在` game loop中被调用，而不是直接call --></li>
-</ul>
-
-<p>举个例子来说，entity可以是游戏中的玩家，Component就是玩家的各个属性，比如生命值，体力值，蓝量等。System则对Component进行处理，最常见的System就是游戏中的物理系统，每过一段时间，这个系统就需要检测并更新代表玩家的位置的Component。</p>
-
-<h3 id="为什么要用ecs">为什么要用ECS？</h3>
-<p>为什么要用ECS，而不是传统的OOP进行游戏开发？（守望先锋 Overwatch正是使用ECS的一个例子）简单来说，ECS在游戏开发方面，具有性能和语言简洁的优势：</p>
-
-<h4 id="方便管理">方便管理</h4>
-<p>一个简单的例子：游戏需要几个敌人：坦克，步兵和幽灵。假如我们使用OOP，这三种敌人都会继承于Enemy类。但是，幽灵是没有碰撞体积的，这就和Enemy类里带有的碰撞体积相冲突了。而如果使用ECS，我们只需要不给幽灵这个Entity 碰撞体积 这个component，问题就解决了了</p>
-
-<p>当然，这和情况下，我们也可以通过把鬼魂的碰撞体积设置成0来解决。这甚至更加简单，OOP在小型项目中确实有不错的表现。但是想想这样一个情况：游戏中需要添加新的敌人：幽灵步兵。它和普通步兵一样，但是没有碰撞体积。在OOP中，这个entity只能继承与步兵类，毕竟他和步兵有很多相似。而至于幽灵的逻辑？只能够从幽灵类中复制然后黏贴了。更不用提当项目变大，游戏中有上百个entity，每个entity有几十个Component的时候了。</p>
-
-<!-- 而在ECS中，你只需要把步兵的Component（射击，渲染）和幽灵的Component（碰撞体积）一并添加给entity就好了。 -->
-
-<h4 id="性能优势">性能优势</h4>
-
-<p><em>增加CPU缓存命中，提升性能</em></p>
-
-<p>Entity和System并不会保存数据，也就是说数据全权由Component负责。同一种Component的数据回储存在硬盘上相邻的位置（尽管可能属于不同的Entity），这就使得CPU访问它们十分高效。这是因为CPU的cache缓存机制，每次从硬盘上读取数据不仅会读取那个特定地址的数据，相邻位置的数据也会一并被读取。</p>
-
-<p>举个例子，物理System需要对游戏内所有entity的位置进行更新：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># OOP:
-for entity in entities:
-    if entity.Physics != None:
-        entity.Physics.Update()
-</code></pre></div></div>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ECS
-for component in physicsComponents:
-    component.Update()
-</code></pre></div></div>
-<p>很显然，ECS避免了对所有entity的遍历。而OOP不仅不要遍历的entity更多，需要访问的数据实际上分布在内存个不同地方，地址的来回跳转会消耗大量的时间。</p>
-
-<p>在更加底层，ECS使用了内存对齐和Entity内存分布器，Chunk等设计来优化内存管理，这里就不展开了。</p>
-
-<p><em>数据和逻辑解耦</em></p>
-
-<p>正如上面提到的，Component负责数据，而System负责逻辑，这就达成了数据和逻辑的解耦。这使得多核CPU并行处理时更加方便，不同的系统可以并行处理不同的组件数据。</p>
-
-<h3 id="ecs-如何运行一个游戏">ECS 如何运行一个游戏</h3>
-
-<p>游戏一般是由一个主循环驱动，每一帧调用Update函数对游戏进行更新。游戏更新，说白了，其实就是System的更新，因为它包含了所有的逻辑，调用他们对数据，也就是Component进行更改就好了</p>
-
-<h4 id="system的分类">System的分类</h4>
-<p>System一般分为两种，React System和Update System。而不管哪一种Sytem，都有两个必要的函数：Process() 和 OnProcess()。</p>
-
-<ul>
-  <li>OnProcess接收一个Entity对象，它将对一个Entity的特定Component进行修改更新。</li>
-  <li>Process则是更新整个系统，他会对所有需要更新Entity调用OnProcess。</li>
-</ul>
-
-<p>UpdateSystem，代表需要定时更新的系统，比如 生命恢复，或者物理系统。这种系统一般是对所有具有特定Component的Entity进行更新，所以找出所有这样的Entity，并调用OnProcess即可</p>
-
-<p>ReactSystem，代表特定条件触发的系统，所以哪个Entity需要进行更新是由其他因素决定的。这类系统会储存一个 _listCache，来储存需要更新的Entity。</p>
-
-<h3 id="客户端与服务器">客户端与服务器</h3>
+<p>The input file will be pre-processed ANSI C, also called <strong>C90</strong> or <strong>C89</strong>.</p>
 
 <hr />
-<h3 id="参考">参考</h3>
+
+<h2 id="lexer-lexical-analyzer"><strong>Lexer (Lexical Analyzer)</strong></h2>
+
+<p>A <strong>Lexer</strong> is a tool that processes an input sequence of characters (usually source code or text) and converts it into a sequence of <strong>tokens</strong>. Each token represents a meaningful element, such as:</p>
+
 <ul>
-  <li>https://blog.csdn.net/u012861978/article/details/132397770</li>
+  <li><strong>Keywords</strong></li>
+  <li><strong>Identifiers</strong></li>
+  <li><strong>Operators</strong></li>
+  <li><strong>Delimiters</strong></li>
 </ul>
+
+<p>These tokens are then used in subsequent steps of compilation.</p>
+
+<p>In this project, we use <strong>Flex</strong> (Fast Lexical Analyzer Generator), a tool for generating a lexical analyzer.</p>
+
+<p>A sample code is shown below:</p>
+
+<pre><code class="language-flex">
+"sizeof"		{ count(); return(SIZEOF); }
+"static"		{ count(); return(STATIC); }
+"struct"		{ count(); return(STRUCT); }
+"switch"		{ count(); return(SWITCH); }
+"typedef"		{ cout &lt;&lt; "typedef "; return(TYPEDEF); }
+"union"			{ count(); return(UNION); }
+"unsigned"		{ count(); return(UNSIGNED); }
+"void"			{ count(); return(VOID); }
+"volatile"		{ count(); return(VOLATILE); }
+"while"			{ count(); return(WHILE); }
+
+{L}({L}|{D}|[_])*		{ cout &lt;&lt; "id" &lt;&lt; endl; yylval.my_string = new std::string(yytext); return(IDENTIFIER); }
+
+
+
+
+[0-9]+		{ cout &lt;&lt; std::stoi(yytext, NULL); yylval.my_int = std::stoi(yytext, NULL); return INTNUM; }
+
+
+"..."			{ count(); return(ELLIPSIS); }
+"&gt;&gt;="			{ count(); return(RIGHT_ASSIGN); }
+"&lt;&lt;="			{ count(); return(LEFT_ASSIGN); }
+"+="			{ count(); return(ADD_ASSIGN); }
+"-="			{ count(); return(SUB_ASSIGN); }
+"*="			{ count(); return(MUL_ASSIGN); }
+"/="			{ count(); return(DIV_ASSIGN); }
+"%="			{ count(); return(MOD_ASSIGN); }
+"&amp;="			{ count(); return(AND_ASSIGN); }
+"^="			{ count(); return(XOR_ASSIGN); }
+
+</code></pre>
+
+<hr />
+
+<h2 id="parser"><strong>Parser</strong></h2>
+
+<p>A <strong>Parser</strong> is a tool that takes the sequence of tokens generated by the lexer and analyzes their grammatical structure based on the rules of a <strong>formal grammar</strong>.</p>
+
+<p>The parser constructs a <strong>parse tree</strong> (or <strong>syntax tree</strong>) that represents the hierarchical structure of the input. This tree is essential for further processes like:</p>
+
+<ul>
+  <li><strong>Code generation</strong></li>
+  <li><strong>Interpretation</strong></li>
+</ul>
+
+<p>For this project, we use <strong>Bison</strong>, a tool to define the grammar of a language and automatically generate a parser in <strong>C</strong> or <strong>C++</strong>.</p>
+
+<p>A demo of code is shown below:</p>
+
+<pre><code class="language-y">%type &lt;my_program_list&gt;	PROGRAM_LIST
+%type &lt;my_enum_list&gt;	enum_list
+%type &lt;my_enum_assign&gt;	enum_assign
+%type &lt;my_struct_list&gt;	struct_list
+%type &lt;my_struct_assign&gt;	struct_assign
+
+
+%start ROOT
+%%
+
+ROOT 
+	: PROGRAM_LIST	{cout&lt;&lt;"program-&gt;root"&lt;&lt;endl; g_root = $1; }
+	// | function_definition	{g_root = $1;std::cout &lt;&lt; "root reached" &lt;&lt; std::endl;}
+	;
+
+PROGRAM_LIST
+	: PROGRAM				{$$ = new ProgramList(); $$-&gt;addProgram($1);cout &lt;&lt; "program_list" &lt;&lt; std::endl;}
+	| PROGRAM_LIST PROGRAM	{$$ = $1; $$-&gt;addProgram($2);cout &lt;&lt; "program_list_add" &lt;&lt; std::endl;}
+	;
+
+PROGRAM
+	: function_definition	{$$ = $1;}
+	| enum_declaration		{$$ = $1;}
+	| struct_declaration	{$$ = $1;}
+	| declaration_statement	{$$ = $1;}
+	| array 				{$$ = $1;}
+	| TYPEDEF type IDENTIFIER ';'	{$$ = new Typedef(*$2, *$3);}
+	;
+
+function_definition
+	: type IDENTIFIER '(' ')' compound_statement	{$$ = new FunctionDefination(*$1, *$2, $5); cout&lt;&lt;"function_definition no argument"&lt;&lt;endl;}
+	| type IDENTIFIER '(' parameter_list ')' compound_statement	{$$ = new FunctionDefination(*$1, *$2, $6, $4); cout&lt;&lt;"function_definition with argument"&lt;&lt;endl;}
+	| type IDENTIFIER '(' parameter_list ')' ';'	{$$ = new FunctionDefination(*$1, *$2, NULL, $4); cout&lt;&lt;"empty_function_definition"&lt;&lt;endl;} 
+	| type IDENTIFIER '(' ')' ';' {$$ = new FunctionDefination(*$1, *$2);}
+	;
+
+struct_reference
+	: STRUCT IDENTIFIER IDENTIFIER ';' {$$ = new StructReference(*$2, *$3);}
+	;
+
+</code></pre>
 
 
                 <hr style="visibility: hidden;">
@@ -337,17 +358,17 @@ for component in physicsComponents:
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2024/07/02/omnigame/" data-toggle="tooltip" data-placement="top" title="Omnigame Internship">
+                        <a href="/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA-zh/" data-toggle="tooltip" data-placement="top" title="FPGA控制的多人在线游戏">
                         Previous<br>
-                        <span>Omnigame Internship</span>
+                        <span>FPGA控制的多人在线游戏</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2024/08/02/%E6%B8%B8%E6%88%8F%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF/" data-toggle="tooltip" data-placement="top" title="客户端与服务器">
+                        <a href="/2023/05/02/ISSIE-en/" data-toggle="tooltip" data-placement="top" title="ISSIE Beautify Project">
                         Next<br>
-                        <span>客户端与服务器</span>
+                        <span>ISSIE Beautify Project</span>
                         </a>
                     </li>
                     
@@ -413,33 +434,53 @@ for component in physicsComponents:
                     <div class="tags">
         				
                             
-                				<a href="/tags/#C#" title="C#" rel="5">
-                                    C#
+        				
+                            
+                				<a href="/tags/#Machine Learning" title="Machine Learning" rel="3">
+                                    Machine Learning
                                 </a>
                             
         				
                             
-                				<a href="/tags/#Unity" title="Unity" rel="4">
-                                    Unity
-                                </a>
-                            
-        				
-                            
-        				
-                            
-        				
-                            
-                				<a href="/tags/#Project" title="Project" rel="3">
+                				<a href="/tags/#Project" title="Project" rel="7">
                                     Project
                                 </a>
                             
         				
                             
-        				
+                				<a href="/tags/#C#" title="C#" rel="8">
+                                    C#
+                                </a>
                             
         				
                             
-                				<a href="/tags/#Internship" title="Internship" rel="2">
+                				<a href="/tags/#Unity" title="Unity" rel="6">
+                                    Unity
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Python" title="Python" rel="2">
+                                    Python
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#AWS" title="AWS" rel="2">
+                                    AWS
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#Pytorch" title="Pytorch" rel="2">
+                                    Pytorch
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Internship" title="Internship" rel="4">
                                     Internship
                                 </a>
                             
@@ -477,6 +518,12 @@ for component in physicsComponents:
                             
                 				<a href="/tags/#游戏开发" title="游戏开发" rel="2">
                                     游戏开发
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Data Stream" title="Data Stream" rel="2">
+                                    Data Stream
                                 </a>
                             
         				
@@ -578,7 +625,7 @@ for component in physicsComponents:
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; JY Blog 2024
+                    Copyright &copy; JY Blog 2025
                     <br>
                     Theme on <a href="https://github.com/Johnny1882/Johnny1882.github.io.git">GitHub</a> |
                     <iframe
@@ -671,6 +718,21 @@ for component in physicsComponents:
 
 
 <!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'qiubaiying.top';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
 
 
 

@@ -10,7 +10,7 @@
     <meta name="keywords"  content="JY Blog, Johnny的博客, iOS, Apple, iPhone">
     <meta name="theme-color" content="#000000">
     
-    <title>客户端与服务器 - Johnny的博客 | JY Blog</title>
+    <title>秋招经验总结 - Johnny的博客 | JY Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2024/08/02/%E6%B8%B8%E6%88%8F%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF/">
+    <link rel="canonical" href="http://localhost:4000/2024/12/23/JobHuntExpShare-zh/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -56,6 +56,7 @@
     <!-- ga & ba script hoook -->
     <script></script>
 </head>
+
 
 
 <!-- hack iOS CSS :active style -->
@@ -117,9 +118,13 @@
                     
                         
                     
+                        
+                    
 
                     <!-- Language Switch Button -->
                     <li>
+
+                        
                         
                     </li>
                 </ul>
@@ -185,13 +190,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-iWatch.jpg" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-BJJ.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-iWatch.jpg')
+        background-image: url('/img/post-bg-BJJ.jpg')
     }
 
     
@@ -204,19 +209,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#Unity" title="Unity">Unity</a>
-                        
-                        <a class="tag" href="/tags/#C#" title="C#">C#</a>
-                        
-                        <a class="tag" href="/tags/#游戏开发" title="游戏开发">游戏开发</a>
+                        <a class="tag" href="/tags/#JobHunt" title="JobHunt">JobHunt</a>
                         
                     </div>
-                    <h1>客户端与服务器</h1>
+                    <h1>秋招经验总结</h1>
                     
                     
-                    <h2 class="subheading">游戏的前后端</h2>
+                    <h2 class="subheading">2024-25 实习和应届求职经验分享</h2>
                     
-                    <span class="meta">Posted by JY on August 2, 2024</span>
+                    <span class="meta">Posted by JY on December 23, 2024</span>
                 </div>
             </div>
         </div>
@@ -235,18 +236,127 @@
                 post-container">
 
 				<h2 id="前言">前言</h2>
-<p>在 <strong>游戏架构：ECS</strong> 博客中，介绍了一个游戏系统是如何运行的。但这只适用于单机游戏，如果游戏需要接入服务器呢？客户端与服务器需要以什么样的形式进行沟通？</p>
 
-<h2 id="正文">正文</h2>
-<p>理想状态下，假设服务器有无限的性能，所有游戏的逻辑都由服务器计算，只需要服务器把数据传输到客户端进行播放。这减轻了客户端的负担，不再需要高性能CPU和GPU，也杜绝了任何外挂，毕竟为了外挂入侵服务器也太小题大做了。</p>
+<p>秋招对于应届生来说，是个相当痛苦的过程：各公司的招聘时间参差不齐，流程杂乱无章，导致战线一般会被拉的很长；各种期待落空带来的负反馈，以及同时身边的卷怪同学也会带来不小的压力。
+本人秋招投递了不少公司，最后签了华子成功上岸。和offer当顺子的大佬比肯定还是有差距，但一路过来也积累了不少经验的感悟，想借此分享出来，希望能给各位一些启发。</p>
 
-<p>但通常来说，客户端会承担一部分的游戏逻辑。如果全权由服务器负责运算，处理量过于庞大，特别是LOL这类大型网游，可能同时有几万盘游戏在同时运行，同时也可能导致游戏的延迟问题。这也就导致外挂由可乘之机。就拿最普遍的FPS游戏来说，射击的计算一般是放在客户端处理的，如果在服务器计算，再穿回本地，会导致严重的延迟，比如你看到自己开了一枪，但是过了半秒，子弹才射出去。而外挂可以通过修改客户端的数据，比如子弹的位置，来进行作弊，也就是常说的魔术子弹。</p>
+<h2 id="如何准备">如何准备</h2>
 
-<p>当然，游戏可以通过定期检查服务器数据，或是反作弊插件检测是否有修改行为。但这些说到底只是增加了外挂的成本，无法真正杜绝。毕竟机器在玩家的手上，玩家有绝对的控制。反作弊软件再厉害，也无法访问底层内存，但玩家可以，这也就是DMA（Direct Memory Access）外挂，通过直接访问和修改内存进行作弊。</p>
+<h3 id="找准方向">找准方向</h3>
+<p>现在计算机已经大不如前，各个企业的招聘条件也越来越苛刻。个人体验下来，大部分公司会要求对基础知识的熟悉掌握（不光是八股文），并且有多个相关的实习或项目。
+当然不是说达不到就没有希望，但满足能大大增加offer的概率。</p>
 
-<h3 id="如何沟通">如何沟通？</h3>
+<ol>
+  <li>
+    <p><strong>明确自己要申请的岗位</strong><br />
+首先，结合自己的经历来，挑选出<strong>一个</strong>自己最有优势的方向，比如基础知识熟悉或有过多个项目经历的。切记不可全凭着兴趣选，或是一拍脑门，选自认为有前景但毫无经验的方向，
+这很可能让你的秋招难度超级加倍。并且如果没有深入了解，很容易对难度和前景有不切实际的幻想，最后发现不对劲的时候，往往已经晚了。</p>
+  </li>
+  <li>
+    <p><strong>集中精力，长期准备</strong><br />
+前端，后端，AI，还是测试，每个岗位需要准备的东西都相差甚远。如果本身学校有课业，或者是在本身基础较弱，便很难有精力同时准备多个岗位的申请。
+因此，最好集中精力准备一个岗位。</p>
 
-<p>一个游戏会有一个CoreGame，也就是游戏的核心逻辑。这个逻辑正是通过ECS架构构造的。</p>
+    <p>同时，建议备战开始的越早越好。leetcode和八股文看似能够短时间内冲刺，但想要熟练运用还是需要多次和反复的练习；
+项目和实习经历更不用多说，越早开始越好（大一就可以开始了）。早点有实习的经历能够帮助你快速的提升自己，也能帮助你了解岗位相关的知识。并且在第一次实习之后，
+找到下一份的实习也就容易很多。找实习的过程也是不可多得的经历，在正式秋招往往能帮助避开很多误区。</p>
+  </li>
+</ol>
+
+<p>最后再提一嘴，除非是真的干不下去，或者实在是看不到前景，我个人是及不推荐中途转变方向的。正如上面所说，不同岗位的门槛越来越高，转方向的成本会非常大，
+并且没有足够的项目支撑，光会背书也很难能过面试关。</p>
+
+<h3 id="放弃取巧心理">放弃取巧心理</h3>
+<p>秋招看似是一场为期几个月的考试，但其实考验的是一个学生的综合素质。面试的流程相信大家都不陌生：简历筛选，leetcode，八股文，项目拷打，hr面试等等，
+是对一个学生的全方面考察。leetcode来检测智力，八股来检测基础，项目来检测过去的经历，对项目的了解，甚至工作的态度。
+这就像是从不同角度观察一个物体，光是立起一个面是远不够的。第一次申请很容易有一种错觉：只要我努力，把八股文全背下来，狠狠刷leetcode，offer就手到擒来。
+但八股和leetcode仅仅是一方面，如果没有足够的能力和知识体系的支撑，光把八股文背下来肯定不足以蒙混过关；面试官也不是傻子，稍微深挖一些就露馅了。</p>
+
+<h3 id="平稳心态">平稳心态</h3>
+<p>因为秋招的战线一般拉的很长，甚至可能延续到2-3月的春招，有一个平稳的心态并保持好节奏是非常重要的。但知易行难，因此强烈建议各位至少申请一次实习，
+并提前练习起来。</p>
+
+<ol>
+  <li>尽量避免被同学的成功刺激，然后进行疯狂的努力来试图赶超。这样不仅分散注意力，还会打乱自己的节奏。</li>
+  <li>处理好面试被拒的落差：收拒信是很艹心态的事，特别是心仪公司，明明面试的不错，却换来一封冰冷冷的感谢信。这时千万不能让失败影响自己的心态，
+毕竟秋招可以失败无数次，但只要成功一次。悲天悯人往往没有用，冷静下来复盘面试的细节，往往能够发现很多没注意到的错误。</li>
+</ol>
+
+<h2 id="具体秋招流程">具体秋招流程</h2>
+
+<h3 id="简历">简历</h3>
+<p>简历网上有大把的模板，这里就不细说了。说个我觉得值得注意的点：</p>
+
+<p>只要你能够在面试中圆回来，在简历上吹牛是完全ok的。比方说项目中和别人合作的部分，只要你有足够的了解，完全可以说成是自己独立完成的；
+或是可以把公司和学校合作的项目说成实习。但是不建议捏造项目，或者吹一些不是很了解的工作，面试中一旦被识破基本就没戏了</p>
+
+<h3 id="网申">网申</h3>
+<p>在不同的网站上填同样的信息，算是相当乏味的部分了，并且公司多且杂，之后的流程也乱七八糟。我的经验是，用笔记软件记录下自己申请的公司（我用的是notion），
+并更新进展，这样以方便整理和日程规划，还能顺便记录一些面试的经验和笔记。</p>
+
+<h3 id="笔试">笔试</h3>
+<p>笔试主要考察八股文和leetcode：</p>
+
+<ol>
+  <li>
+    <p><strong>Leetcode</strong> <br />
+笔试的难度一般在medium左右，并且有时限，因此最好对算法有不错的题感和熟练度。个人感觉leetcode 200题（medium + easy）足以应对大部分的笔试。
+但是，200题不是过了就行，一定要对解题有自己的理解和思考，最好能做笔记，有时间可以回过头看来看看是否还有思路。
+leetcode最好是长期的准备，每周刷个3-10题即可。如果太久不刷题，容易遗忘之前的知识点，而太过集中的刷题反而不利于消化和吸收。</p>
+  </li>
+  <li>
+    <p><strong>八股文</strong> <br />
+八股文不建议死记硬背。笔试和面试中的问题是非常灵活的，如果光是背诵，即使过了笔试，面试也非常容易露陷。
+建议各位还是从基础开始，把背后的知识体系掌握了，八股文背起来也就是水到渠成的事情。操作系统，软件系统，网络通信，
+计算机专业一般都会教，直接复习整理一遍即可。如果是非科班，差了一两门课没有教过，也可以速通一下网课。这里推荐一下清华的操作系统，讲的非常详细。</p>
+  </li>
+</ol>
+
+<p>这里顺带推荐一个<a href="https://www.csview.cn/">八股文网站</a>，整理的还挺全面的。</p>
+
+<h3 id="面试">面试</h3>
+
+<ol>
+  <li>
+    <p><strong>技术面试</strong> <br />
+技术面的leetcode一般比笔试的简单一些，熟练掌握hot 100题足够应对大多数的手撕了。八股文和项目则一般会问的比较深入，建议面试前好好深入了解自己的项目，
+想一些可能会被问到的点，特别是在简历上强调的点。面试中如果出现了自己不了解的，推荐实话实说，面试临场编造很容易被追问戳穿，然后直接寄掉。</p>
+  </li>
+  <li>
+    <p><strong>HR/主管面试</strong> <br />
+很多人认为HR面没那么重要，或是天真的认为坦诚能够获得HR的青睐，其实这是大忌。换位思考一下，作为HR，你会关心的是候选人的那些因素？无非两点：</p>
+    <ol>
+      <li>综合素质。能否优秀的完成任务，能否抗压，是否能够沟通等。</li>
+      <li>发了offer会不会来。HR也会有kpi压力，肯定不希望offer被鸽</li>
+    </ol>
+
+    <p>因此HR面中切忌实话实说，但也不可太过虚伪，这样很容易被识破。HR问题也万变不离其宗，回答思路可大致遵循一下几点：</p>
+
+    <ol>
+      <li>
+        <p>表现得很想要进这家公司。比方说 “为什么选择我们”，“为什么选择这个岗位”，就要说为什么热爱这个公司和岗位（不管你实际上咋想的）。
+ “你有考虑其他公司吗” 也是这类问题的变种，你要是老老实实的说“有在考虑”可就掉进陷阱了。最好的回答是：“我也申请的其他公司，但最想进的还是贵公司，因为。。。”</p>
+
+        <p>同时，最好对公司的文化有一定的了解，特别是华为这类很注重文化的公司。能讲出公司文化起码证明你是有做功课，并且是想要进公司的。</p>
+      </li>
+      <li>
+        <p>尽量体现出自己性格上的优点。不同公司的理想牛马可能不完全一致，但大致是</p>
+        <ul>
+          <li>吃苦耐劳</li>
+          <li>学习速度快</li>
+          <li>善于沟通</li>
+          <li>不太有组织能力和领导能力（这个视实际公司和岗位而定）</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>结合公司和自己的经历，往这几条上靠就完事了。</p>
+  </li>
+</ol>
+
+<h2 id="总结">总结</h2>
+<p>再次声明，以上只是本人的个人经验和看法，仅供参考，也欢迎大家讨论和指出写的不严谨的部分。希望我乱写的东西能多多少少帮到之后秋招的同学。
+最后，如果想看看我个人简历或是经历，欢迎访问我的<a href="https://johnny1882.github.io/">个人网页</a>。</p>
 
 
                 <hr style="visibility: hidden;">
@@ -254,19 +364,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2024/08/01/%E5%85%B3%E4%BA%8EUnity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%86%E8%A7%A3/" data-toggle="tooltip" data-placement="top" title="游戏架构：ECS">
+                        <a href="/2024/08/09/ByteStream-zh/" data-toggle="tooltip" data-placement="top" title="字节流处理">
                         Previous<br>
-                        <span>游戏架构：ECS</span>
+                        <span>字节流处理</span>
                         </a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/2024/08/09/Byte_Stream/" data-toggle="tooltip" data-placement="top" title="Byte Stream">
-                        Next<br>
-                        <span>Byte Stream</span>
-                        </a>
-                    </li>
                     
                 </ul>
 
@@ -330,33 +433,53 @@
                     <div class="tags">
         				
                             
-                				<a href="/tags/#C#" title="C#" rel="5">
-                                    C#
+        				
+                            
+                				<a href="/tags/#Machine Learning" title="Machine Learning" rel="3">
+                                    Machine Learning
                                 </a>
                             
         				
                             
-                				<a href="/tags/#Unity" title="Unity" rel="4">
-                                    Unity
-                                </a>
-                            
-        				
-                            
-        				
-                            
-        				
-                            
-                				<a href="/tags/#Project" title="Project" rel="3">
+                				<a href="/tags/#Project" title="Project" rel="7">
                                     Project
                                 </a>
                             
         				
                             
-        				
+                				<a href="/tags/#C#" title="C#" rel="8">
+                                    C#
+                                </a>
                             
         				
                             
-                				<a href="/tags/#Internship" title="Internship" rel="2">
+                				<a href="/tags/#Unity" title="Unity" rel="6">
+                                    Unity
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Python" title="Python" rel="2">
+                                    Python
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#AWS" title="AWS" rel="2">
+                                    AWS
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#Pytorch" title="Pytorch" rel="2">
+                                    Pytorch
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Internship" title="Internship" rel="4">
                                     Internship
                                 </a>
                             
@@ -394,6 +517,12 @@
                             
                 				<a href="/tags/#游戏开发" title="游戏开发" rel="2">
                                     游戏开发
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Data Stream" title="Data Stream" rel="2">
+                                    Data Stream
                                 </a>
                             
         				
@@ -495,7 +624,7 @@
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; JY Blog 2024
+                    Copyright &copy; JY Blog 2025
                     <br>
                     Theme on <a href="https://github.com/Johnny1882/Johnny1882.github.io.git">GitHub</a> |
                     <iframe
@@ -588,6 +717,21 @@
 
 
 <!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'qiubaiying.top';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
 
 
 

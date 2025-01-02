@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA/">
+    <link rel="canonical" href="http://localhost:4000/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA-en/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -56,6 +56,7 @@
     <!-- ga & ba script hoook -->
     <script></script>
 </head>
+
 
 
 <!-- hack iOS CSS :active style -->
@@ -117,9 +118,13 @@
                     
                         
                     
+                        
+                    
 
                     <!-- Language Switch Button -->
                     <li>
+
+                        
                         
                     </li>
                 </ul>
@@ -321,38 +326,37 @@
 
 <h3 id="implementing-the-seven-segment-display">Implementing the Seven-Segment Display</h3>
 
-<p>```c
-while(loop){ 
-    printf(“&lt;–&gt; Please Type Your Username (6 bits maximum) and Press Enter: &lt;–&gt;\n”);</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="n">loop</span><span class="p">){</span> 
+    <span class="n">printf</span><span class="p">(</span><span class="s">"&lt;--&gt; Please Type Your Username (6 bits maximum) and Press Enter: &lt;--&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> 
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>char text[2*CHARLIM] = "";  
-char prevLetter = '!'; 
-int length = 0; 
-int running = 1; 
-prevLetter = alt_getchar();   
-prevLetter = get_text(prevLetter, &amp;length, text, &amp;running); 
+    <span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">CHARLIM</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>  
+    <span class="kt">char</span> <span class="n">prevLetter</span> <span class="o">=</span> <span class="sc">'!'</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">running</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">alt_getchar</span><span class="p">();</span>   
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">prevLetter</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">running</span><span class="p">);</span> 
 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX5_BASE, getBin(text[0])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX4_BASE, getBin(text[1])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX3_BASE, getBin(text[2])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX2_BASE, getBin(text[3])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX1_BASE, getBin(text[4])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX0_BASE, getBin(text[5]));
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX5_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX4_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX3_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX2_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX1_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX0_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">]));</span>
 
-// print score 
-char text[2*CHARLIM] = ""; 
-char prevLetter = '!'; 
-int length = 0; 
-int running = 1; 
-prevLetter = alt_getchar(); 
-prevLetter = get_text(prevLetter, &amp;length, text, &amp;running); 
+    <span class="c1">// print score </span>
+    <span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">CHARLIM</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span> 
+    <span class="kt">char</span> <span class="n">prevLetter</span> <span class="o">=</span> <span class="sc">'!'</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="kt">int</span> <span class="n">running</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">alt_getchar</span><span class="p">();</span> 
+    <span class="n">prevLetter</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">prevLetter</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">running</span><span class="p">);</span> 
 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX5_BASE, getBin(text[0])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX4_BASE, getBin(text[1])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX3_BASE, getBin(text[2])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX2_BASE, getBin(text[3])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX1_BASE, getBin(text[4])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX0_BASE, getBin(text[5])); \`\`\`
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX5_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX4_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX3_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX2_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX1_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">4</span><span class="p">]));</span> 
+    <span class="n">IOWR_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">HEX0_BASE</span><span class="p">,</span> <span class="n">getBin</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">5</span><span class="p">]));</span>
 </code></pre></div></div>
 
 <p>We designed a seven-segment display that can show both characters and numbers. It is used in two parts of the game:</p>
@@ -364,22 +368,22 @@ IOWR_ALTERA_AVALON_PIO_DATA(HEX0_BASE, getBin(text[5])); \`\`\`
 
 <h3 id="implementing-the-button">Implementing the Button</h3>
 
-<p>```c
-button = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_BASE); 
-if(button == 0b10){//press key0 to stop 
- char stop=’a’;</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span> <span class="o">=</span> <span class="n">IORD_ALTERA_AVALON_PIO_DATA</span><span class="p">(</span><span class="n">BUTTON_BASE</span><span class="p">);</span> 
+<span class="k">if</span><span class="p">(</span><span class="n">button</span> <span class="o">==</span> <span class="mi">0</span><span class="n">b10</span><span class="p">){</span><span class="c1">//press key0 to stop </span>
+ <span class="kt">char</span> <span class="n">stop</span><span class="o">=</span><span class="sc">'a'</span><span class="p">;</span> 
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>still_in_game = 0; // if will finish the game and print the mark 
-alt_up_accelerometer_spi_read_x_axis(acc_dev, &amp; x_read); 
-alt_up_accelerometer_spi_read_y_axis(acc_dev, &amp; y_read); 
-alt_up_accelerometer_spi_read_z_axis(acc_dev, &amp; z_read); 
-x_read = firFilter(&amp; samples_x, n, x_read); 
-y_read = firFilter(&amp; samples_y, n, y_read); 
-z_read = firFilter(&amp; samples_z, n, z_read); 
-char x_dir, y_dir; 
-x_dir = 'a'; 
-y_dir = 'a'; 
-alt_printf("%c%c\n", x_dir, y_dir);  } \`\`\`
+    <span class="n">still_in_game</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// if will finish the game and print the mark </span>
+    <span class="n">alt_up_accelerometer_spi_read_x_axis</span><span class="p">(</span><span class="n">acc_dev</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">x_read</span><span class="p">);</span> 
+    <span class="n">alt_up_accelerometer_spi_read_y_axis</span><span class="p">(</span><span class="n">acc_dev</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">y_read</span><span class="p">);</span> 
+    <span class="n">alt_up_accelerometer_spi_read_z_axis</span><span class="p">(</span><span class="n">acc_dev</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">z_read</span><span class="p">);</span> 
+    <span class="n">x_read</span> <span class="o">=</span> <span class="n">firFilter</span><span class="p">(</span><span class="o">&amp;</span> <span class="n">samples_x</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x_read</span><span class="p">);</span> 
+    <span class="n">y_read</span> <span class="o">=</span> <span class="n">firFilter</span><span class="p">(</span><span class="o">&amp;</span> <span class="n">samples_y</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">y_read</span><span class="p">);</span> 
+    <span class="n">z_read</span> <span class="o">=</span> <span class="n">firFilter</span><span class="p">(</span><span class="o">&amp;</span> <span class="n">samples_z</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">z_read</span><span class="p">);</span> 
+    <span class="kt">char</span> <span class="n">x_dir</span><span class="p">,</span> <span class="n">y_dir</span><span class="p">;</span> 
+    <span class="n">x_dir</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span> 
+    <span class="n">y_dir</span> <span class="o">=</span> <span class="sc">'a'</span><span class="p">;</span> 
+    <span class="n">alt_printf</span><span class="p">(</span><span class="s">"%c%c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">x_dir</span><span class="p">,</span> <span class="n">y_dir</span><span class="p">);</span> 
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>Pressing key 0 stops the game and displays the score on the screen.</p>
@@ -420,58 +424,55 @@ alt_printf("%c%c\n", x_dir, y_dir);  } \`\`\`
 
 <h5 id="connection">Connection</h5>
 
-<p>```python
-def init():  # connect and remember three clients 
-    print(“initializing, please connect player1”) 
-    msg1, add1 = server_socket.recvfrom(2048) 
-    time.sleep(1)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>  <span class="c1"># connect and remember three clients 
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">initializing, please connect player1</span><span class="sh">"</span><span class="p">)</span> 
+    <span class="n">msg1</span><span class="p">,</span> <span class="n">add1</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print("initializing, please connect player2") 
-msg2, add2 = server_socket.recvfrom(2048) 
-time.sleep(1) 
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">initializing, please connect player2</span><span class="sh">"</span><span class="p">)</span> 
+    <span class="n">msg2</span><span class="p">,</span> <span class="n">add2</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
 
-print("initializing, please connect destination") 
-msg3, add3 = server_socket.recvfrom(2048) 
-time.sleep(1) 
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">initializing, please connect destination</span><span class="sh">"</span><span class="p">)</span> 
+    <span class="n">msg3</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
 
-return add1, add2, add3 
+    <span class="k">return</span> <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> 
+
+<span class="k">def</span> <span class="nf">connect</span><span class="p">():</span>  <span class="c1"># refuse and retry the connection when one player appears multiple times  
+</span>    <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">init</span><span class="p">()</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">add1</span> <span class="o">==</span> <span class="n">add2</span><span class="p">):</span> 
+            <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">two player have the same address</span><span class="sh">"</span><span class="p">)</span> 
+            <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">init</span><span class="p">()</span> 
+    <span class="nf">if </span><span class="p">(</span><span class="n">add1</span> <span class="o">==</span> <span class="n">add3</span> <span class="ow">or</span> <span class="n">add2</span> <span class="o">==</span> <span class="n">add3</span><span class="p">):</span> 
+            <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">destination and player have the same address</span><span class="sh">"</span><span class="p">)</span> 
+            <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">init</span><span class="p">()</span> 
+    <span class="k">return</span> <span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> 
+
+<span class="n">add1</span><span class="p">,</span> <span class="n">add2</span><span class="p">,</span> <span class="n">add3</span> <span class="o">=</span> <span class="nf">connect</span><span class="p">()</span>
 </code></pre></div></div>
-
-<p>def connect():  # refuse and retry the connection when one player appears multiple times<br />
-    add1, add2, add3 = init() 
-    if (add1 == add2): 
-            print(“two player have the same address”) 
-            add1, add2, add3 = init() 
-    if (add1 == add3 or add2 == add3): 
-            print(“destination and player have the same address”) 
-            add1, add2, add3 = init() 
-    return add1, add2, add3</p>
-
-<p>add1, add2, add3 = connect()
-```</p>
 
 <p>This part of the code does the connection. Since we can’t know the public IP of clients, the server receives one message from each one of them and remembers the IP. If one IP appears multiple times, the server will refuse and retry the connection.</p>
 
 <h5 id="transmitting">Transmitting</h5>
 
-<p>```python
-while True: 
-    #cadd below is the client process address 
-    cmsg, cadd = server_socket.recvfrom(2048) 
-    cmsg = cmsg.decode() 
-    id = cmsg[:2]  # get first 3 characters of string</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span> 
+    <span class="c1">#cadd below is the client process address 
+</span>    <span class="n">cmsg</span><span class="p">,</span> <span class="n">cadd</span> <span class="o">=</span> <span class="n">server_socket</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> 
+    <span class="n">cmsg</span> <span class="o">=</span> <span class="n">cmsg</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span> 
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">cmsg</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># get first 3 characters of string
+</span>
+    <span class="c1"># Information like scores and Health is transmitted using Database, so the transmission is one-way. We add a header in front of the message so that the game can distinguish between player1 and player2.
+</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">cadd</span> <span class="o">==</span> <span class="n">add1</span><span class="p">):</span> 
+        <span class="n">cmsg</span> <span class="o">=</span> <span class="sh">'</span><span class="s">C1:</span><span class="sh">'</span> <span class="o">+</span> <span class="n">cmsg</span> 
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">C1:</span><span class="sh">"</span> <span class="o">+</span> <span class="n">cmsg</span><span class="p">)</span> 
+        <span class="n">server_socket</span><span class="p">.</span><span class="nf">sendto</span><span class="p">(</span><span class="n">cmsg</span><span class="p">.</span><span class="nf">encode</span><span class="p">(),</span> <span class="n">add3</span><span class="p">)</span> 
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Information like scores and Health is transmitted using Database, so the transmission is one-way. We add a header in front of the message so that the game can distinguish between player1 and player2.
-
-if (cadd == add1): 
-    cmsg = 'C1:' + cmsg 
-    print("C1:" + cmsg) 
-    server_socket.sendto(cmsg.encode(), add3) 
-
-if (cadd == add2): 
-    cmsg = 'C2:' + cmsg 
-    print("C2:" + cmsg) 
-    server_socket.sendto(cmsg.encode(), add3) \`\`\`
+    <span class="nf">if </span><span class="p">(</span><span class="n">cadd</span> <span class="o">==</span> <span class="n">add2</span><span class="p">):</span> 
+        <span class="n">cmsg</span> <span class="o">=</span> <span class="sh">'</span><span class="s">C2:</span><span class="sh">'</span> <span class="o">+</span> <span class="n">cmsg</span> 
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">C2:</span><span class="sh">"</span> <span class="o">+</span> <span class="n">cmsg</span><span class="p">)</span> 
+        <span class="n">server_socket</span><span class="p">.</span><span class="nf">sendto</span><span class="p">(</span><span class="n">cmsg</span><span class="p">.</span><span class="nf">encode</span><span class="p">(),</span> <span class="n">add3</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="database">Database</h3>
@@ -500,19 +501,17 @@ if (cadd == add2):
 
 <p><strong>Software Part:</strong></p>
 
-<p>```text
-Protocol/delay  Test 1    Test 2    Test 3    Test 4    Test 5    Average
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Protocol/delay  Test 1    Test 2    Test 3    Test 4    Test 5    Average
 UDP             165ms     343.2ms   263ms     302.3ms   187.2ms   252.14ms
-```</p>
+</code></pre></div></div>
 
 <p><strong>Hardware Part:</strong></p>
 
-<p>```text
-Running 50 times:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Running 50 times:
 
-<p>Average  Max       Min
+Average  Max       Min
 0.62 ms  250.23 ms 0.53 ms
-```</p>
+</code></pre></div></div>
 
 <h3 id="unity-game-development">Unity Game Development</h3>
 
@@ -524,19 +523,27 @@ Running 50 times:</p>
 
 <p>To view the final system deliverable and demonstration, please refer to the video we have submitted with this coursework. It showcases live gameplay, along with commentary on the implementation. Group14</p>
 
-<p><a href="http://host.py/">http://host.py/</a>
-<a href="https://imperiallondon-my.sharepoint.com/:v:/g/personal/bz1521_ic_ac_uk/EQWuP7PvxvNBj7r5vfuSiUABnPlbUIslF7B5U7uDMGvb-w">https://imperiallondon-my.sharepoint.com/:v:/g/personal/bz1521_ic_ac_uk/EQWuP7PvxvNBj7r5vfuSiUABnPlbUIslF7B5U7uDMGvb-w</a></p>
+<p><a href="http://host.py/">related code</a></p>
+
+<p><a href="https://imperiallondon-my.sharepoint.com/:v:/g/personal/bz1521_ic_ac_uk/EQWuP7PvxvNBj7r5vfuSiUABnPlbUIslF7B5U7uDMGvb-w">recorded demo</a></p>
 
 
                 <hr style="visibility: hidden;">
 
                 <ul class="pager">
                     
+                    <li class="previous">
+                        <a href="/2022/07/02/TrafficSignRecognition-en/" data-toggle="tooltip" data-placement="top" title="Traffic Sign Recognition Research Project">
+                        Previous<br>
+                        <span>Traffic Sign Recognition Research Project</span>
+                        </a>
+                    </li>
+                    
                     
                     <li class="next">
-                        <a href="/2023/07/01/Deepwok-Lab/" data-toggle="tooltip" data-placement="top" title="Machine Learning Internship">
+                        <a href="/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA-zh/" data-toggle="tooltip" data-placement="top" title="FPGA控制的多人在线游戏">
                         Next<br>
-                        <span>Machine Learning Internship</span>
+                        <span>FPGA控制的多人在线游戏</span>
                         </a>
                     </li>
                     
@@ -602,33 +609,53 @@ Running 50 times:</p>
                     <div class="tags">
         				
                             
-                				<a href="/tags/#C#" title="C#" rel="5">
-                                    C#
+        				
+                            
+                				<a href="/tags/#Machine Learning" title="Machine Learning" rel="3">
+                                    Machine Learning
                                 </a>
                             
         				
                             
-                				<a href="/tags/#Unity" title="Unity" rel="4">
-                                    Unity
-                                </a>
-                            
-        				
-                            
-        				
-                            
-        				
-                            
-                				<a href="/tags/#Project" title="Project" rel="3">
+                				<a href="/tags/#Project" title="Project" rel="7">
                                     Project
                                 </a>
                             
         				
                             
-        				
+                				<a href="/tags/#C#" title="C#" rel="8">
+                                    C#
+                                </a>
                             
         				
                             
-                				<a href="/tags/#Internship" title="Internship" rel="2">
+                				<a href="/tags/#Unity" title="Unity" rel="6">
+                                    Unity
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Python" title="Python" rel="2">
+                                    Python
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#AWS" title="AWS" rel="2">
+                                    AWS
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#Pytorch" title="Pytorch" rel="2">
+                                    Pytorch
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Internship" title="Internship" rel="4">
                                     Internship
                                 </a>
                             
@@ -666,6 +693,12 @@ Running 50 times:</p>
                             
                 				<a href="/tags/#游戏开发" title="游戏开发" rel="2">
                                     游戏开发
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Data Stream" title="Data Stream" rel="2">
+                                    Data Stream
                                 </a>
                             
         				
@@ -767,7 +800,7 @@ Running 50 times:</p>
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; JY Blog 2024
+                    Copyright &copy; JY Blog 2025
                     <br>
                     Theme on <a href="https://github.com/Johnny1882/Johnny1882.github.io.git">GitHub</a> |
                     <iframe
@@ -860,6 +893,21 @@ Running 50 times:</p>
 
 
 <!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'qiubaiying.top';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
 
 
 

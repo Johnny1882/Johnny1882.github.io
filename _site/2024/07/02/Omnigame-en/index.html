@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2024/07/02/omnigame/">
+    <link rel="canonical" href="http://localhost:4000/2024/07/02/Omnigame-en/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -56,6 +56,7 @@
     <!-- ga & ba script hoook -->
     <script></script>
 </head>
+
 
 
 <!-- hack iOS CSS :active style -->
@@ -117,9 +118,13 @@
                     
                         
                     
+                        
+                    
 
                     <!-- Language Switch Button -->
                     <li>
+
+                        
                         
                     </li>
                 </ul>
@@ -234,37 +239,69 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="project-summary">Project Summary</h1>
+				<h3 id="project-brief">Project Brief</h3>
 
-<h2 id="overview">Overview</h2>
+<p>The project is cooperating with Amazon AWS Team, Use reinforcement learning to train AI agent in our gameplay. Our game <a href="https://store.steampowered.com/app/2525990/Quad_Battle/">Quad Battle</a> is a multiplayer online game, combining MOBA, Monopoly, and auto chess. The game aim to be published by next year, play it if you like!</p>
 
-<p>This project involved various aspects of software development, focusing on game development, server management, and advanced programming concepts. The work encompassed a broad range of tasks, from setting up and managing servers to developing game logic and integrating various tools and technologies.</p>
+<p>In this project, I’m mainly responsible includes building and maintaining server, modify communication protocal, provide interface for AWS team, and modify game structure according to requirements.</p>
 
-<h2 id="key-accomplishments">Key Accomplishments</h2>
+<h3 id="rl-design-challenges">RL Design Challenges</h3>
 
-<ul>
-  <li><strong>Data Analysis</strong>: Utilized tools like Python and MongoDB to analyze and manage data effectively.</li>
-  <li><strong>AWS Management</strong>: Implemented and managed AWS resources to ensure smooth server operations.</li>
-  <li><strong>Server Updates</strong>: Regularly updated server configurations and handled HTTP requests efficiently.</li>
-  <li><strong>Client and Server Interaction</strong>: Developed mechanisms for seamless communication between the client and server, ensuring robust and reliable data exchange.</li>
-  <li><strong>Game Development</strong>: Worked on enhancing game features using the Entity Component System (ECS) architecture for better performance and scalability.</li>
-  <li><strong>Tool Integration</strong>: Successfully integrated various development tools, including Unity, Rider, and Perforce, to streamline the workflow and enhance productivity.</li>
-  <li><strong>Protobuf and RPC</strong>: Utilized Protobuf for defining data structures and Remote Procedure Call (RPC) for efficient communication between different components.</li>
-</ul>
+<p>Conventional reinforcement learning use game like chess, while this game is much more complex. Player have abilities, and Map have different tools, so many effect were used to define state, action and reward</p>
 
-<h2 id="important-learnings">Important Learnings</h2>
+<h4 id="state">State</h4>
+<ol>
+  <li>
+    <p>Player’s Position. The map in grid form, so x-y coordinateds can be used to define positon. It’s easier then conventional MOBA game, where player’s position is continous.</p>
+  </li>
+  <li>
+    <p>Teammates State. The game is usually in a team of 4, so Teammates’ state and Enemies’ state is also considered. This includes positon, health and score.</p>
+  </li>
+  <li>
+    <p>Map info: there are different tools for player to use on the map, some of then are generated dynamicly, so it’s necessary to put this into consideration.</p>
+  </li>
+</ol>
 
-<ul>
-  <li><strong>Effective Data Management</strong>: Leveraging modern tools for data analysis and management can significantly improve efficiency.</li>
-  <li><strong>Cloud Services</strong>: Proper use of cloud services like AWS is crucial for maintaining scalable and reliable server infrastructure.</li>
-  <li><strong>Modular Architecture</strong>: Adopting ECS and other modular approaches enhances the flexibility and performance of game development projects.</li>
-  <li><strong>Tool Integration</strong>: Seamless integration of development tools can greatly streamline the development process and reduce overhead.</li>
-  <li><strong>Communication Protocols</strong>: Understanding and implementing communication protocols such as RPC is essential for robust client-server interactions.</li>
-</ul>
+<h4 id="action">Action</h4>
+<p>This is more complex, as Each character have it’s unique ability.</p>
 
-<h2 id="conclusion">Conclusion</h2>
+<ol>
+  <li>Move/Attack:</li>
+  <li>Use ability</li>
+  <li>Buy/Sell minions</li>
+  <li>Make tech choice</li>
+</ol>
 
-<p>The project provided a comprehensive experience in managing and developing large-scale software systems. The key takeaway is the importance of efficient data management, scalable infrastructure, and robust communication protocols. By integrating various tools and adopting modular architectures, the project achieved significant improvements in performance and productivity.</p>
+<h4 id="reward">Reward</h4>
+
+<ol>
+  <li>Winner Score: Once Score reach 3000, the team wins, so this is important</li>
+  <li>castle health: Like most MOBA, if the crystal is destroyed, the team loose immediately, so health of castle including crystal is also important</li>
+</ol>
+
+<h3 id="aws-manager-server-design">AWS Manager Server Design</h3>
+<p>Quad Battle is a online game, so game needs to run on a server, seperate from AWS training agents. Also, there many be more then one agent in a battle, and more then one battle running at the same time. So it’s necessary to build a seperate server, AWS Manager, to Manage diffent battle and agnets.</p>
+
+<p>AWS Manager use HTTP to accept requests.</p>
+<ol>
+  <li>CreateBattle: Create a new battle</li>
+  <li>DeleteeBattle: End a battle</li>
+  <li>UpdateBattle: Update a Battle, make it proceed by a given time interval.</li>
+</ol>
+
+<p>Since UpdateBattle will be called very frequently, a ProducerConsumerQueue is used to optimize. Update requests will be stored in this messagequeue, and workers can retrive and complete the update task from the queue asynchronously.</p>
+
+<p>For a certain battle, a protobuf protocal is used to define TCP messages between client and server.
+Because Training require frequent update of state infomation, I create a messge ReconnectMsg. This is modified from the Message responsible for reconnection, because reconnection require most of the current game status.</p>
+
+<h3 id="game-modify">Game Modify</h3>
+<p>For Reinforcement Learning, a gameplay can be done in under one minute. To improve efficiency, This require us to modify the game, enable it to speed up according to update speed of training agent.</p>
+
+<p>Quad Battle use a ECS Structure, and there’s a component corresponding for managing gametime. This component use real-world time to update it’s value.</p>
+
+<p>Inorder to achieve game acceleration, I created a new component to handle time. But instead of using real-world time, i set a fixed time for each game frame. So eachtime it’s updated, the game is processed by a constant time.</p>
+
+<p>UpdateBattle, the HTTP request handled by AWS Manager, will update the game component. Training agent can send this request to AWS Manager to inform it’s ready for it’s next step. By doing this, the agent can control the game to go that it’s speed.</p>
 
 
                 <hr style="visibility: hidden;">
@@ -272,17 +309,17 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2024/05/02/Cooperator-en/" data-toggle="tooltip" data-placement="top" title="Cooperator - Fully automated github repo translator">
+                        <a href="/2024/05/02/Cooperator-zh/" data-toggle="tooltip" data-placement="top" title="Cooperator - GitHub大型项目本地化的解决方案">
                         Previous<br>
-                        <span>Cooperator - Fully automated github repo translator</span>
+                        <span>Cooperator - GitHub大型项目本地化的解决方案</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2024/08/01/%E5%85%B3%E4%BA%8EUnity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%86%E8%A7%A3/" data-toggle="tooltip" data-placement="top" title="游戏架构：ECS">
+                        <a href="/2024/07/02/Omnigame-zh/" data-toggle="tooltip" data-placement="top" title="奥蒙妮游戏实习">
                         Next<br>
-                        <span>游戏架构：ECS</span>
+                        <span>奥蒙妮游戏实习</span>
                         </a>
                     </li>
                     
@@ -348,33 +385,53 @@
                     <div class="tags">
         				
                             
-                				<a href="/tags/#C#" title="C#" rel="5">
-                                    C#
+        				
+                            
+                				<a href="/tags/#Machine Learning" title="Machine Learning" rel="3">
+                                    Machine Learning
                                 </a>
                             
         				
                             
-                				<a href="/tags/#Unity" title="Unity" rel="4">
-                                    Unity
-                                </a>
-                            
-        				
-                            
-        				
-                            
-        				
-                            
-                				<a href="/tags/#Project" title="Project" rel="3">
+                				<a href="/tags/#Project" title="Project" rel="7">
                                     Project
                                 </a>
                             
         				
                             
-        				
+                				<a href="/tags/#C#" title="C#" rel="8">
+                                    C#
+                                </a>
                             
         				
                             
-                				<a href="/tags/#Internship" title="Internship" rel="2">
+                				<a href="/tags/#Unity" title="Unity" rel="6">
+                                    Unity
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Python" title="Python" rel="2">
+                                    Python
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#AWS" title="AWS" rel="2">
+                                    AWS
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#Pytorch" title="Pytorch" rel="2">
+                                    Pytorch
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Internship" title="Internship" rel="4">
                                     Internship
                                 </a>
                             
@@ -412,6 +469,12 @@
                             
                 				<a href="/tags/#游戏开发" title="游戏开发" rel="2">
                                     游戏开发
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Data Stream" title="Data Stream" rel="2">
+                                    Data Stream
                                 </a>
                             
         				
@@ -513,7 +576,7 @@
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; JY Blog 2024
+                    Copyright &copy; JY Blog 2025
                     <br>
                     Theme on <a href="https://github.com/Johnny1882/Johnny1882.github.io.git">GitHub</a> |
                     <iframe
@@ -606,6 +669,21 @@
 
 
 <!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-90855596-1';
+    var _gaDomain = 'qiubaiying.top';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
 
 
 

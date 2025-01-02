@@ -10,7 +10,7 @@
     <meta name="keywords"  content="JY Blog, Johnny的博客, iOS, Apple, iPhone">
     <meta name="theme-color" content="#000000">
     
-    <title>Cooperator - Fully automated github repo translator - Johnny的博客 | JY Blog</title>
+    <title>客户端与服务器 - Johnny的博客 | JY Blog</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2024/05/02/Cooperator-en/">
+    <link rel="canonical" href="http://localhost:4000/2024/08/02/UnityGameFramework-en/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -190,13 +190,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-rwd.jpg" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-iWatch.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-rwd.jpg')
+        background-image: url('/img/post-bg-iWatch.jpg')
     }
 
     
@@ -209,25 +209,19 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#Django" title="Django">Django</a>
+                        <a class="tag" href="/tags/#Unity" title="Unity">Unity</a>
                         
-                        <a class="tag" href="/tags/#Sqlite" title="Sqlite">Sqlite</a>
+                        <a class="tag" href="/tags/#C#" title="C#">C#</a>
                         
-                        <a class="tag" href="/tags/#LLM" title="LLM">LLM</a>
-                        
-                        <a class="tag" href="/tags/#Azure" title="Azure">Azure</a>
-                        
-                        <a class="tag" href="/tags/#Github" title="Github">Github</a>
-                        
-                        <a class="tag" href="/tags/#Project" title="Project">Project</a>
+                        <a class="tag" href="/tags/#游戏开发" title="游戏开发">游戏开发</a>
                         
                     </div>
-                    <h1>Cooperator - Fully automated github repo translator</h1>
+                    <h1>客户端与服务器</h1>
                     
                     
-                    <h2 class="subheading">2024 Summer Project</h2>
+                    <h2 class="subheading">游戏的前后端</h2>
                     
-                    <span class="meta">Posted by JY on May 2, 2024</span>
+                    <span class="meta">Posted by JY on August 2, 2024</span>
                 </div>
             </div>
         </div>
@@ -245,200 +239,19 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="localizing-github-repositories-with-llms">Localizing GitHub Repositories with LLMs</h1>
+				<h2 id="前言">前言</h2>
+<p>在 <strong>游戏架构：ECS</strong> 博客中，介绍了一个游戏系统是如何运行的。但这只适用于单机游戏，如果游戏需要接入服务器呢？客户端与服务器需要以什么样的形式进行沟通？</p>
 
-<p>Many established software teams work across multiple locations, basing their work on GitHub repositories. Such teams consist of people across different languages and cultures.</p>
+<h2 id="正文">正文</h2>
+<p>理想状态下，假设服务器有无限的性能，所有游戏的逻辑都由服务器计算，只需要服务器把数据传输到客户端进行播放。这减轻了客户端的负担，不再需要高性能CPU和GPU，也杜绝了任何外挂，毕竟为了外挂入侵服务器也太小题大做了。</p>
 
-<p>It is common practice for large repositories to undergo localization procedures, which involves translating documentation files in such a way that preserve the context of work.</p>
+<p>但通常来说，客户端会承担一部分的游戏逻辑。如果全权由服务器负责运算，处理量过于庞大，特别是LOL这类大型网游，可能同时有几万盘游戏在同时运行，同时也可能导致游戏的延迟问题。这也就导致外挂由可乘之机。就拿最普遍的FPS游戏来说，射击的计算一般是放在客户端处理的，如果在服务器计算，再穿回本地，会导致严重的延迟，比如你看到自己开了一枪，但是过了半秒，子弹才射出去。而外挂可以通过修改客户端的数据，比如子弹的位置，来进行作弊，也就是常说的魔术子弹。</p>
 
-<p>For example, if you had the following Python code in English:</p>
+<p>当然，游戏可以通过定期检查服务器数据，或是反作弊插件检测是否有修改行为。但这些说到底只是增加了外挂的成本，无法真正杜绝。毕竟机器在玩家的手上，玩家有绝对的控制。反作弊软件再厉害，也无法访问底层内存，但玩家可以，这也就是DMA（Direct Memory Access）外挂，通过直接访问和修改内存进行作弊。</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test the Python print function
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello World</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
+<h3 id="如何沟通">如何沟通？</h3>
 
-<p>It would look like this in French:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># tester la fonction print en Python
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Bonjour le monde</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>While this is a simple example, there exist small nuances that require us to pay attention to the context of the example. For example, the Python function <code class="language-plaintext highlighter-rouge">print</code> cannot be translated into another language. The hash (#), that denotes the comment also has to be left unmodified even during the translation. Paying attention to small details is not something conventional machine translation methods (used in tools such as Google Translate) are developed for.</p>
-
-<p>Given the nature of this work, localization is not a trivial task. At Microsoft, there are localization teams hired to produce culturally and professionally accurate versions of documentation, reports, and guides for codebases. Tasks like these can take up to several months to finish.</p>
-
-<p>Fortunately, this task is something large language models (LLMs) excel at compared to machine translation, as they process tokens of text in a context window. LLMs use attention mechanisms to weigh the relevance of each token relative to others in the sequence, allowing them to capture nuanced meanings and contextual dependencies effectively.</p>
-
-<p><img src="http://localhost:4000/assets/cooperator/adv_of_lms.png" alt="advantages of lm" /></p>
-
-<p>Our team at Imperial College London has worked with Microsoft to realize the potential of LLMs in the localization process, including noting any interesting behaviors and useful takeaways of what is currently possible with existing technologies provided by Azure and OpenAI.</p>
-
-<h2 id="introducing-a-proof-of-concept-github-app">Introducing a Proof-of-Concept GitHub App</h2>
-
-<p>As part of the project, our team built a simple GitHub app based off Django and React, with the former framework utilizing Python to quickly build and iterate an app that would look for a configuration file on an installed GitHub repository, and then Markdown files on the repo.</p>
-
-<p>The app opts for a simple configuration:</p>
-
-<ul>
-  <li>We use English as the universal language (although theoretically, we can have this set to any other language). Any translations made by the app are stored in a separate branch that follows the main branch. Every time main is updated by the user, the app pushes to the translation branch and makes a PR to main.</li>
-  <li>A yml configuration file lists the directory of the documentation folder and the desired languages to be translated into.</li>
-  <li>Any <code class="language-plaintext highlighter-rouge">README.md</code> files in the repository are automatically translated – the translated READMEs are placed in a folder of translations adjacent to the original <code class="language-plaintext highlighter-rouge">README.md</code> file in English.</li>
-  <li>All markdown files in the documentation directory are automatically translated. The documentation directory also contains translation folders by language. Each translation folder mirrors the structure of the documentation directory in English.</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/project_root
-    /docs
-        /installation.md
-        /screenshot.png
-        /api
-            /services.md
-        /usage.md
-        /fr
-            /installation.md
-            /usage.md
-            /api
-                /services.md
-        /es
-            /installation.md
-            /usage.md
-            /api
-                /services.md
-        /translated_images
-            /screenshot&lt;hash&gt;.fr.png
-            /screenshot&lt;hash&gt;.es.png
-    /src
-        /readme.md
-        /readme_img.png
-        /translations
-            /readme.fr.md
-            /readme.es.md
-        /translated_images
-            /readme_img&lt;hash&gt;.fr.png
-            /readme_img&lt;hash&gt;.es.png
-</code></pre></div></div>
-
-<p><img src="http://localhost:4000/assets/cooperator/app_structure.png" alt="app structure" /></p>
-
-<h2 id="properly-translating-a-markdown-file">Properly Translating a Markdown File</h2>
-
-<p>There are three aspects to translating a markdown file:</p>
-
-<ol>
-  <li>Getting the text translations correct</li>
-  <li>Getting the code block translations precise</li>
-  <li>Translating the images in the Markdown file.</li>
-</ol>
-
-<h3 id="text-translation">Text Translation</h3>
-
-<p>This was a relatively straightforward task requiring minimal prompting – our tests with GPT models were generally very accurate (even with RTL languages like Arabic). At the time of testing, GPT-4o and GPT-4 were accurate most of the time for high-resource languages and performed moderately on low-resource languages. GPT-3.5 performed adequately for common high-resource languages but struggled with low-resource languages.</p>
-
-<p>This article covers a deeper definition of low-resource languages, which tend to be less commonly spoken in the world. Naturally, there is a lack of training data in such low-resource languages used to train language models, which leads to poorer performance in tasks that involve low-resource languages compared to completing tasks in high-resource languages. This behavior is observed in many leading LLMs today, such as from Claude, Llama, Mistral, and GPT. There exist initiatives such as Cohere for AI that try to solve the low-resource language problem with dedicated multilingual models such as Aya, but they are out of the scope of this article.</p>
-
-<h3 id="code-block-translation">Code Block Translation</h3>
-
-<p>To our surprise, translating code blocks in Markdown came naturally to most LLMs. Since a lot of training data for GPTs consist of a lot of code, the GPT models perform very well on translating comments while preserving the structure of code syntax in code blocks.</p>
-
-<h3 id="image-translation">Image Translation</h3>
-
-<p><img src="http://localhost:4000/assets/cooperator/image_translation.png" alt="app structure" /></p>
-
-<p>Markdown files can contain images – in most cases these images are stored locally within the repository. All the images in the repository get translated and their translated copies are stored within the repo, and then after the Markdown files are translated, regex is used to find all image links and replace them with their translated variants.</p>
-
-<p>Current state of the art diffusion cannot be reliably prompted to generate translated versions of images due to their probabilistic nature – they are good at generating new images from scratch but cannot imitate the structure of previous images.</p>
-
-<p>Generating new images would also be computationally expensive, so we developed a novel way of using a mix of OCR services and GPT models to translate images:</p>
-
-<ol>
-  <li>Use Azure’s Image Analysis API to detect text lines and their bounding boxes</li>
-  <li>Feed the detected text lines into GPT to be translated</li>
-  <li>Replace each text line with translated variant</li>
-</ol>
-
-<p>This is not a perfect solution, but text replacement works. It was also agreed with our supervisor that overlaying text would be more legally feasible because there was no generation of new images of similar likeness, which carries copyright implications.</p>
-
-<h2 id="more-detailed-information-about-the-app">More Detailed Information about the App</h2>
-
-<ul>
-  <li>Django backend, React frontend</li>
-</ul>
-
-<h3 id="translation-process">Translation Process</h3>
-<h4 id="installation">Installation</h4>
-<p>Users start by installing GitHub app on repositories or organization selected, those repositories will be recorded in SQLite database, and displayed on webpage once you logged in. A robot account will be invited to those repositories.</p>
-
-<h4 id="initial-translation">Initial Translation</h4>
-<p>Once you activate translation on webpage, a new branch “co-op-translator” will be created, then all document files/images will be read and translated by backend server, then uploaded to the new branch. Pull request will then be created from “co-op-translator” to main branch. Note that all changes to repositories will be performed by the robot account, as it’s easier to manage.</p>
-
-<h4 id="tracking-stage">Tracking Stage</h4>
-<p>Repositories will be further tracked. GitHub app is subscribed to events (main branch update, delete of pull requests), modified or added document in new commit will be translated and updated on the “co-op-translator” branch, old pull request will be replaced by a new one.</p>
-
-<h3 id="edge-cases-and-interesting-behavior">Edge Cases and Interesting Behavior</h3>
-
-<ul>
-  <li><strong>Fixed:</strong> The GPT model would hallucinate translated short 1-liner markdown files:
-    <ul>
-      <li><strong>INPUT:</strong>
-        <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Example Hello World in Markdown</span>
-</code></pre></div>        </div>
-      </li>
-      <li><strong>OUTPUT (translated into Spanish):</strong>
-        <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Ejemplo de "Hello World" en Markdown</span>
-    
-Este es un archivo <span class="se">\`</span>README.md<span class="se">\`</span> simple para demostrar el formato de Markdown en GitHub.
-    
-<span class="gu">## Características</span>
-    
-Este documento incluye:
-<span class="p">-</span> Etiquetas de <span class="gs">**encabezado**</span> (<span class="se">\`</span>#<span class="se">\`</span>)
-<span class="p">-</span> <span class="gs">**Bloque de código**</span> para resaltado de sintaxis
-<span class="p">-</span> Formato en <span class="gs">**negrita**</span>
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>We tried to prompt the model with the prompt:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>“NEVER ADD ANY EXTRA CONTENT OUTSIDE THE TRANSLATION. TRANSLATE ONLY WHAT IS GIVEN TO YOU. MAINTAIN MARKDOWN FORMAT”
-</code></pre></div></div>
-
-<p>This worked, but the model would fail to translate longer files properly. So, we have a dynamic prompt – for files with less than 2 lines, we use the prompt for shorter files, and for files with more than 2 lines, we use the original prompt.</p>
-
-<p><strong>Issues in Image Context:</strong> Sometimes due to the way image text is extracted, they are parsed line by line in order of appearance from left to right, then top to bottom. However, this order might not reflect the structure of objects in the text, and sometimes context can be confusing to the model as it has no spatial awareness of the text.</p>
-
-<ul>
-  <li>
-    <p><strong>Example Image, two cards of text:</strong></p>
-
-    <p><img src="http://localhost:4000/assets/cooperator/two_cards.png" alt="app structure" /></p>
-
-    <ul>
-      <li>Extracted Text (-&gt; French translation)
-        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Section 1: -&gt; Section 1:
-Section 2: -&gt; Section 2:
-My favourite tech -&gt; Ma technologie préférée
-My favourite fruit -&gt; Mon fruit préféré:
-company: Apple -&gt; société: Apple
-: Apple -&gt; : Apple? Pomme?
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>Expected Output
-<img src="http://localhost:4000/assets/cooperator/expected_output.png" alt="app structure" /></p>
-      </li>
-      <li>Actual Output (using line to line replacement)
-<img src="http://localhost:4000/assets/cooperator/actual_output.png" alt="app structure" /></li>
-    </ul>
-  </li>
-</ul>
-
-<p>Note that the translation of “Apple” could be confused between either the company name in French (also called Apple), or the fruit (pomme). Note that there is also a small grammatical error as ‘tech company’ has been split up, so the context has lost track of the lines. This is because ‘tech company’ is reversed in French to be ‘société tech’ or ‘company tech’.</p>
-
-<h2 id="examples">Examples</h2>
-
-<p>Take this example, of a Microsoft Guide for Generative AI in English. This is the app’s translated French version. Note that translations do not work with externally linked images.</p>
+<p>一个游戏会有一个CoreGame，也就是游戏的核心逻辑。这个逻辑正是通过ECS架构构造的。</p>
 
 
                 <hr style="visibility: hidden;">
@@ -446,17 +259,17 @@ company: Apple -&gt; société: Apple
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2023/07/01/Deepwok-Lab-zh/" data-toggle="tooltip" data-placement="top" title="机器学习科研">
+                        <a href="/2024/08/01/UnityGameFramework-zh/" data-toggle="tooltip" data-placement="top" title="Game Framework：ECS">
                         Previous<br>
-                        <span>机器学习科研</span>
+                        <span>Game Framework：ECS</span>
                         </a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2024/05/02/Cooperator-zh/" data-toggle="tooltip" data-placement="top" title="Cooperator - GitHub大型项目本地化的解决方案">
+                        <a href="/2024/08/09/ByteStream-en/" data-toggle="tooltip" data-placement="top" title="Byte Stream">
                         Next<br>
-                        <span>Cooperator - GitHub大型项目本地化的解决方案</span>
+                        <span>Byte Stream</span>
                         </a>
                     </li>
                     

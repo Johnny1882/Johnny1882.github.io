@@ -5,9 +5,230 @@
     <description>Every failure is leading towards success.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 27 Aug 2024 10:42:04 +0800</pubDate>
-    <lastBuildDate>Tue, 27 Aug 2024 10:42:04 +0800</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2025 16:56:54 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2025 16:56:54 +0000</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>秋招经验总结</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;秋招对于应届生来说，是个相当痛苦的过程：各公司的招聘时间参差不齐，流程杂乱无章，导致战线一般会被拉的很长；各种期待落空带来的负反馈，以及同时身边的卷怪同学也会带来不小的压力。
+本人秋招投递了不少公司，最后签了华子成功上岸。和offer当顺子的大佬比肯定还是有差距，但一路过来也积累了不少经验的感悟，想借此分享出来，希望能给各位一些启发。&lt;/p&gt;
+
+&lt;h2 id=&quot;如何准备&quot;&gt;如何准备&lt;/h2&gt;
+
+&lt;h3 id=&quot;找准方向&quot;&gt;找准方向&lt;/h3&gt;
+&lt;p&gt;现在计算机已经大不如前，各个企业的招聘条件也越来越苛刻。个人体验下来，大部分公司会要求对基础知识的熟悉掌握（不光是八股文），并且有多个相关的实习或项目。
+当然不是说达不到就没有希望，但满足能大大增加offer的概率。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;明确自己要申请的岗位&lt;/strong&gt;&lt;br /&gt;
+首先，结合自己的经历来，挑选出&lt;strong&gt;一个&lt;/strong&gt;自己最有优势的方向，比如基础知识熟悉或有过多个项目经历的。切记不可全凭着兴趣选，或是一拍脑门，选自认为有前景但毫无经验的方向，
+这很可能让你的秋招难度超级加倍。并且如果没有深入了解，很容易对难度和前景有不切实际的幻想，最后发现不对劲的时候，往往已经晚了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;集中精力，长期准备&lt;/strong&gt;&lt;br /&gt;
+前端，后端，AI，还是测试，每个岗位需要准备的东西都相差甚远。如果本身学校有课业，或者是在本身基础较弱，便很难有精力同时准备多个岗位的申请。
+因此，最好集中精力准备一个岗位。&lt;/p&gt;
+
+    &lt;p&gt;同时，建议备战开始的越早越好。leetcode和八股文看似能够短时间内冲刺，但想要熟练运用还是需要多次和反复的练习；
+项目和实习经历更不用多说，越早开始越好（大一就可以开始了）。早点有实习的经历能够帮助你快速的提升自己，也能帮助你了解岗位相关的知识。并且在第一次实习之后，
+找到下一份的实习也就容易很多。找实习的过程也是不可多得的经历，在正式秋招往往能帮助避开很多误区。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;最后再提一嘴，除非是真的干不下去，或者实在是看不到前景，我个人是及不推荐中途转变方向的。正如上面所说，不同岗位的门槛越来越高，转方向的成本会非常大，
+并且没有足够的项目支撑，光会背书也很难能过面试关。&lt;/p&gt;
+
+&lt;h3 id=&quot;放弃取巧心理&quot;&gt;放弃取巧心理&lt;/h3&gt;
+&lt;p&gt;秋招看似是一场为期几个月的考试，但其实考验的是一个学生的综合素质。面试的流程相信大家都不陌生：简历筛选，leetcode，八股文，项目拷打，hr面试等等，
+是对一个学生的全方面考察。leetcode来检测智力，八股来检测基础，项目来检测过去的经历，对项目的了解，甚至工作的态度。
+这就像是从不同角度观察一个物体，光是立起一个面是远不够的。第一次申请很容易有一种错觉：只要我努力，把八股文全背下来，狠狠刷leetcode，offer就手到擒来。
+但八股和leetcode仅仅是一方面，如果没有足够的能力和知识体系的支撑，光把八股文背下来肯定不足以蒙混过关；面试官也不是傻子，稍微深挖一些就露馅了。&lt;/p&gt;
+
+&lt;h3 id=&quot;平稳心态&quot;&gt;平稳心态&lt;/h3&gt;
+&lt;p&gt;因为秋招的战线一般拉的很长，甚至可能延续到2-3月的春招，有一个平稳的心态并保持好节奏是非常重要的。但知易行难，因此强烈建议各位至少申请一次实习，
+并提前练习起来。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;尽量避免被同学的成功刺激，然后进行疯狂的努力来试图赶超。这样不仅分散注意力，还会打乱自己的节奏。&lt;/li&gt;
+  &lt;li&gt;处理好面试被拒的落差：收拒信是很艹心态的事，特别是心仪公司，明明面试的不错，却换来一封冰冷冷的感谢信。这时千万不能让失败影响自己的心态，
+毕竟秋招可以失败无数次，但只要成功一次。悲天悯人往往没有用，冷静下来复盘面试的细节，往往能够发现很多没注意到的错误。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;具体秋招流程&quot;&gt;具体秋招流程&lt;/h2&gt;
+
+&lt;h3 id=&quot;简历&quot;&gt;简历&lt;/h3&gt;
+&lt;p&gt;简历网上有大把的模板，这里就不细说了。说个我觉得值得注意的点：&lt;/p&gt;
+
+&lt;p&gt;只要你能够在面试中圆回来，在简历上吹牛是完全ok的。比方说项目中和别人合作的部分，只要你有足够的了解，完全可以说成是自己独立完成的；
+或是可以把公司和学校合作的项目说成实习。但是不建议捏造项目，或者吹一些不是很了解的工作，面试中一旦被识破基本就没戏了&lt;/p&gt;
+
+&lt;h3 id=&quot;网申&quot;&gt;网申&lt;/h3&gt;
+&lt;p&gt;在不同的网站上填同样的信息，算是相当乏味的部分了，并且公司多且杂，之后的流程也乱七八糟。我的经验是，用笔记软件记录下自己申请的公司（我用的是notion），
+并更新进展，这样以方便整理和日程规划，还能顺便记录一些面试的经验和笔记。&lt;/p&gt;
+
+&lt;h3 id=&quot;笔试&quot;&gt;笔试&lt;/h3&gt;
+&lt;p&gt;笔试主要考察八股文和leetcode：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Leetcode&lt;/strong&gt; &lt;br /&gt;
+笔试的难度一般在medium左右，并且有时限，因此最好对算法有不错的题感和熟练度。个人感觉leetcode 200题（medium + easy）足以应对大部分的笔试。
+但是，200题不是过了就行，一定要对解题有自己的理解和思考，最好能做笔记，有时间可以回过头看来看看是否还有思路。
+leetcode最好是长期的准备，每周刷个3-10题即可。如果太久不刷题，容易遗忘之前的知识点，而太过集中的刷题反而不利于消化和吸收。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;八股文&lt;/strong&gt; &lt;br /&gt;
+八股文不建议死记硬背。笔试和面试中的问题是非常灵活的，如果光是背诵，即使过了笔试，面试也非常容易露陷。
+建议各位还是从基础开始，把背后的知识体系掌握了，八股文背起来也就是水到渠成的事情。操作系统，软件系统，网络通信，
+计算机专业一般都会教，直接复习整理一遍即可。如果是非科班，差了一两门课没有教过，也可以速通一下网课。这里推荐一下清华的操作系统，讲的非常详细。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这里顺带推荐一个&lt;a href=&quot;https://www.csview.cn/&quot;&gt;八股文网站&lt;/a&gt;，整理的还挺全面的。&lt;/p&gt;
+
+&lt;h3 id=&quot;面试&quot;&gt;面试&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;技术面试&lt;/strong&gt; &lt;br /&gt;
+技术面的leetcode一般比笔试的简单一些，熟练掌握hot 100题足够应对大多数的手撕了。八股文和项目则一般会问的比较深入，建议面试前好好深入了解自己的项目，
+想一些可能会被问到的点，特别是在简历上强调的点。面试中如果出现了自己不了解的，推荐实话实说，面试临场编造很容易被追问戳穿，然后直接寄掉。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;HR/主管面试&lt;/strong&gt; &lt;br /&gt;
+很多人认为HR面没那么重要，或是天真的认为坦诚能够获得HR的青睐，其实这是大忌。换位思考一下，作为HR，你会关心的是候选人的那些因素？无非两点：&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;综合素质。能否优秀的完成任务，能否抗压，是否能够沟通等。&lt;/li&gt;
+      &lt;li&gt;发了offer会不会来。HR也会有kpi压力，肯定不希望offer被鸽&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;因此HR面中切忌实话实说，但也不可太过虚伪，这样很容易被识破。HR问题也万变不离其宗，回答思路可大致遵循一下几点：&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;表现得很想要进这家公司。比方说 “为什么选择我们”，“为什么选择这个岗位”，就要说为什么热爱这个公司和岗位（不管你实际上咋想的）。
+ “你有考虑其他公司吗” 也是这类问题的变种，你要是老老实实的说“有在考虑”可就掉进陷阱了。最好的回答是：“我也申请的其他公司，但最想进的还是贵公司，因为。。。”&lt;/p&gt;
+
+        &lt;p&gt;同时，最好对公司的文化有一定的了解，特别是华为这类很注重文化的公司。能讲出公司文化起码证明你是有做功课，并且是想要进公司的。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;尽量体现出自己性格上的优点。不同公司的理想牛马可能不完全一致，但大致是&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;吃苦耐劳&lt;/li&gt;
+          &lt;li&gt;学习速度快&lt;/li&gt;
+          &lt;li&gt;善于沟通&lt;/li&gt;
+          &lt;li&gt;不太有组织能力和领导能力（这个视实际公司和岗位而定）&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;结合公司和自己的经历，往这几条上靠就完事了。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;再次声明，以上只是本人的个人经验和看法，仅供参考，也欢迎大家讨论和指出写的不严谨的部分。希望我乱写的东西能多多少少帮到之后秋招的同学。
+最后，如果想看看我个人简历或是经历，欢迎访问我的&lt;a href=&quot;https://johnny1882.github.io/&quot;&gt;个人网页&lt;/a&gt;。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2024/12/23/JobHuntExpShare-zh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/12/23/JobHuntExpShare-zh/</guid>
+        
+        <category>JobHunt</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>字节流处理</title>
+        <description>&lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
+
+&lt;h2 id=&quot;主要内容&quot;&gt;主要内容&lt;/h2&gt;
+&lt;h3 id=&quot;大端和小端&quot;&gt;大端和小端&lt;/h3&gt;
+&lt;p&gt;大端（Big Endian）和小端（Little Endian）定义了数据在物理内存中的存储方式。例如，存储一个 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long&lt;/code&gt; 类型的值：0X 12 34 56 78&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;大端&lt;/strong&gt;：最高有效字节存储在最小的内存地址。
+在内存中，它的存储方式为：12 34 56 78（最小地址在左侧）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;小端&lt;/strong&gt;：最高有效字节存储在最大的内存地址。
+在内存中，它的存储方式为：78 56 34 12&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;由于数据存储是以字节为单位（每个地址可以存储一个字节），因此在大端和小端之间转换只需要反转字节顺序。&lt;/p&gt;
+
+&lt;p&gt;值得注意的是，诸如 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;short&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;int&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long&lt;/code&gt; 这样的数据类型会受到字节序的影响。而字符串（&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;string&lt;/code&gt;）的存储不受影响。此外，由于 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;char&lt;/code&gt; 只占用一个字节，所以也不受影响。&lt;/p&gt;
+
+&lt;h3 id=&quot;网络字节序&quot;&gt;网络字节序&lt;/h3&gt;
+&lt;p&gt;不同的机器可能使用不同的字节序定义。Intel X86 架构使用小端字节序，而 ARM 架构的 CPU 使用大端字节序。如何确保不同机器之间的数据传输不会产生错误呢？&lt;/p&gt;
+
+&lt;p&gt;UDP/TCP/IP 协议规定：将接收到的第一个字节视为最高有效字节，这意味着在数据传输时使用大端字节序。&lt;/p&gt;
+
+&lt;h3 id=&quot;c中的数据流&quot;&gt;C#中的数据流&lt;/h3&gt;
+&lt;p&gt;C# 提供了 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MemoryStream&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BinaryWriter&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BinaryReader&lt;/code&gt; 作为读写字节流的工具。然而，值得注意的是，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BinaryWriter&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BinaryReader&lt;/code&gt; 在读写操作时并不考虑网络字节序。与 Java 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ByteBuffer&lt;/code&gt; 不同，后者在内部处理这一问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-C#&quot;&gt;byte[] byteArray = new byte[] { 0x00, 0x00, 0x00, 0x01 };
+
+using (MemoryStream msIn = new MemoryStream(byteArray))
+using (BinaryReader brIn = new BinaryReader(msIn)){
+    var result = brIn.ReadInt32();
+    Console.Write(result);
+}
+
+// output: 16777216
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在上面的代码中，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;byteArray&lt;/code&gt; 表示大端格式的 Int32 类型值 1。如果通过网络接收到一个 1，这就是我们得到的数据。但由于 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BinaryReader&lt;/code&gt; 默认使用机器的存储格式（小端字节序），因此输出的是对 0x 01 00 00 00 的解释：16777216。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-C#&quot;&gt;Int32 a = 1;
+byte[] byteArray;
+
+using (MemoryStream msIn = new MemoryStream(32))
+using (BinaryWriter writer = new BinaryWriter(msIn, Encoding.UTF8)){
+    writer.Write(a);
+    byteArray = msIn.ToArray();
+}
+
+foreach (byte b in byteArray)
+    Console.Write(b + &quot; &quot;);
+
+// output: 1 0 0 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;同样，使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BinaryWriter&lt;/code&gt; 将数字写入字节流时也会产生类似的问题。在上面的代码中，数字 1 以小端格式写入字节流。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-C#&quot;&gt;long a = 1;
+var ret = BitConverter.GetBytes(a);
+
+foreach (var c in ret)
+    Console.Write($&quot;   {c}&quot;);
+// output: 1 0 0 0 0 0 0 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BitConverter&lt;/code&gt; 的行为方式相同。
+为了解决这个问题，你可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IPAddress.HostToNetworkOrder&lt;/code&gt;，或者手动使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Array.Reverse&lt;/code&gt; 反转字节顺序。&lt;/p&gt;
+
+&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
+
+&lt;p&gt;https://www.cnblogs.com/ArrozZhu/p/8384218.html&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Aug 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/08/09/ByteStream-zh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/08/09/ByteStream-zh/</guid>
+        
+        <category>Data Stream</category>
+        
+        <category>C#</category>
+        
+        
+      </item>
     
       <item>
         <title>Byte Stream</title>
@@ -84,9 +305,9 @@ To address this issue, you can use &lt;code class=&quot;language-plaintext highl
 
 &lt;p&gt;https://www.cnblogs.com/ArrozZhu/p/8384218.html&lt;/p&gt;
 </description>
-        <pubDate>Fri, 09 Aug 2024 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2024/08/09/Byte_Stream/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/08/09/Byte_Stream/</guid>
+        <pubDate>Fri, 09 Aug 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/08/09/ByteStream-en/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/08/09/ByteStream-en/</guid>
         
         <category>Data Stream</category>
         
@@ -111,9 +332,9 @@ To address this issue, you can use &lt;code class=&quot;language-plaintext highl
 
 &lt;p&gt;一个游戏会有一个CoreGame，也就是游戏的核心逻辑。这个逻辑正是通过ECS架构构造的。&lt;/p&gt;
 </description>
-        <pubDate>Fri, 02 Aug 2024 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2024/08/02/%E6%B8%B8%E6%88%8F%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/08/02/%E6%B8%B8%E6%88%8F%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF/</guid>
+        <pubDate>Fri, 02 Aug 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/08/02/UnityGameFramework-en/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/08/02/UnityGameFramework-en/</guid>
         
         <category>Unity</category>
         
@@ -125,97 +346,106 @@ To address this issue, you can use &lt;code class=&quot;language-plaintext highl
       </item>
     
       <item>
-        <title>游戏架构：ECS</title>
-        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+        <title>Game Framework：ECS</title>
+        <description>&lt;h2 id=&quot;preface&quot;&gt;Preface&lt;/h2&gt;
 
-&lt;p&gt;最近在实习中接触到了很多游戏相关的架构和知识，其中就包括了ECS架构。但知识多且有些分散，故此梳理一下。&lt;/p&gt;
+&lt;p&gt;Recently, during my internship, I encountered a lot of game-related architecture and knowledge, including the ECS architecture. However, the information is vast and somewhat scattered, so I decided to organize it.&lt;/p&gt;
 
-&lt;h2 id=&quot;正文&quot;&gt;正文&lt;/h2&gt;
+&lt;h2 id=&quot;main-content&quot;&gt;Main Content&lt;/h2&gt;
 
-&lt;h3 id=&quot;ecs简介&quot;&gt;ECS简介&lt;/h3&gt;
-&lt;p&gt;大型项目中，用的最多的应该是ECS架构（Entity Component System）&lt;/p&gt;
+&lt;h3 id=&quot;introduction-to-ecs&quot;&gt;Introduction to ECS&lt;/h3&gt;
+&lt;p&gt;In large projects, the most commonly used architecture is the ECS (Entity Component System) architecture.&lt;/p&gt;
 
-&lt;p&gt;ECS，顾名思义，就是由Entity，Component和System组成的结构。当然，实际情况复杂得多，但核心仍是这三个概念：&lt;/p&gt;
+&lt;p&gt;ECS, as the name suggests, is a structure composed of Entity, Component, and System. Of course, the actual situation is much more complex, but the core remains these three concepts:&lt;/p&gt;
 
-&lt;h4 id=&quot;entity&quot;&gt;Entity：&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;一个游戏object或者concept&lt;/li&gt;
-  &lt;li&gt;包含一个ID，唯一的标识符&lt;/li&gt;
-  &lt;li&gt;自身没有逻辑或者数据&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;component&quot;&gt;Component：&lt;/h4&gt;
+&lt;h4 id=&quot;entity&quot;&gt;Entity:&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;纯数据，没有逻辑&lt;/li&gt;
-  &lt;li&gt;代表entity的一个特征&lt;/li&gt;
+  &lt;li&gt;A game object or concept&lt;/li&gt;
+  &lt;li&gt;Contains an ID, a unique identifier&lt;/li&gt;
+  &lt;li&gt;Does not have its own logic or data&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;system&quot;&gt;&lt;strong&gt;System：&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;component&quot;&gt;Component:&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;包揽逻辑，一个system通常处理特定的Component&lt;/li&gt;
-  &lt;li&gt;System 通常由游戏循环驱动来修改游戏对象的状态&lt;/li&gt;
-  &lt;li&gt;遍历entity并更新他们的状态
-&lt;!-- - System中的`OnProcess` or `ProcessList`将会在` game loop中被调用，而不是直接call --&gt;&lt;/li&gt;
+  &lt;li&gt;Pure data, no logic&lt;/li&gt;
+  &lt;li&gt;Represents a feature of an entity&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;举个例子来说，entity可以是游戏中的玩家，Component就是玩家的各个属性，比如生命值，体力值，蓝量等。System则对Component进行处理，最常见的System就是游戏中的物理系统，每过一段时间，这个系统就需要检测并更新代表玩家的位置的Component。&lt;/p&gt;
+&lt;h4 id=&quot;system&quot;&gt;&lt;strong&gt;System:&lt;/strong&gt;&lt;/h4&gt;
 
-&lt;h3 id=&quot;为什么要用ecs&quot;&gt;为什么要用ECS？&lt;/h3&gt;
-&lt;p&gt;为什么要用ECS，而不是传统的OOP进行游戏开发？（守望先锋 Overwatch正是使用ECS的一个例子）简单来说，ECS在游戏开发方面，具有性能和语言简洁的优势：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Handles the logic, a system typically processes specific components&lt;/li&gt;
+  &lt;li&gt;A system is usually driven by the game loop to modify the state of game objects&lt;/li&gt;
+  &lt;li&gt;Iterates over entities and updates their states
+&lt;!-- - The `OnProcess` or `ProcessList` in the System will be called in the `game loop` instead of being directly called --&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h4 id=&quot;方便管理&quot;&gt;方便管理&lt;/h4&gt;
-&lt;p&gt;一个简单的例子：游戏需要几个敌人：坦克，步兵和幽灵。假如我们使用OOP，这三种敌人都会继承于Enemy类。但是，幽灵是没有碰撞体积的，这就和Enemy类里带有的碰撞体积相冲突了。而如果使用ECS，我们只需要不给幽灵这个Entity 碰撞体积 这个component，问题就解决了了&lt;/p&gt;
+&lt;p&gt;For example, an entity can be a player in the game, components would be various attributes of the player, such as health, stamina, and mana. The system processes the components, with the most common system being the physics system in a game, which needs to periodically check and update the component representing the player’s position.&lt;/p&gt;
 
-&lt;p&gt;当然，这和情况下，我们也可以通过把鬼魂的碰撞体积设置成0来解决。这甚至更加简单，OOP在小型项目中确实有不错的表现。但是想想这样一个情况：游戏中需要添加新的敌人：幽灵步兵。它和普通步兵一样，但是没有碰撞体积。在OOP中，这个entity只能继承与步兵类，毕竟他和步兵有很多相似。而至于幽灵的逻辑？只能够从幽灵类中复制然后黏贴了。更不用提当项目变大，游戏中有上百个entity，每个entity有几十个Component的时候了。&lt;/p&gt;
+&lt;h3 id=&quot;why-use-ecs&quot;&gt;Why Use ECS?&lt;/h3&gt;
+&lt;p&gt;Why use ECS instead of traditional OOP for game development? (Overwatch is an example that uses ECS) In short, ECS has performance and language simplicity advantages in game development:&lt;/p&gt;
 
-&lt;!-- 而在ECS中，你只需要把步兵的Component（射击，渲染）和幽灵的Component（碰撞体积）一并添加给entity就好了。 --&gt;
+&lt;h4 id=&quot;easy-management&quot;&gt;Easy Management&lt;/h4&gt;
+&lt;p&gt;A simple example: the game needs several enemies: tanks, infantry, and ghosts. If we use OOP, these three enemies would inherit from the Enemy class. However, ghosts do not have collision volumes, which conflicts with the collision volume included in the Enemy class. But if we use ECS, we just need to not give the ghost entity the collision volume component, and the problem is solved.&lt;/p&gt;
 
-&lt;h4 id=&quot;性能优势&quot;&gt;性能优势&lt;/h4&gt;
+&lt;p&gt;Of course, in this situation, we could also solve this by setting the ghost’s collision volume to 0. This is even simpler, and OOP does perform well in small projects. But consider this scenario: the game needs to add a new enemy: ghost infantry. It is similar to regular infantry, but without a collision volume. In OOP, this entity can only inherit from the infantry class since it shares many similarities with the infantry. As for the ghost logic? It can only be copied and pasted from the ghost class. Not to mention that as the project grows larger, with hundreds of entities and each entity having dozens of components, it becomes more complex.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;增加CPU缓存命中，提升性能&lt;/em&gt;&lt;/p&gt;
+&lt;!-- In ECS, you just need to add the components of the infantry (shooting, rendering) and the ghost (collision volume) to the entity. --&gt;
 
-&lt;p&gt;Entity和System并不会保存数据，也就是说数据全权由Component负责。同一种Component的数据回储存在硬盘上相邻的位置（尽管可能属于不同的Entity），这就使得CPU访问它们十分高效。这是因为CPU的cache缓存机制，每次从硬盘上读取数据不仅会读取那个特定地址的数据，相邻位置的数据也会一并被读取。&lt;/p&gt;
+&lt;h4 id=&quot;performance-advantages&quot;&gt;Performance Advantages&lt;/h4&gt;
 
-&lt;p&gt;举个例子，物理System需要对游戏内所有entity的位置进行更新：&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Increase CPU cache hits and improve performance&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# OOP:
-for entity in entities:
-    if entity.Physics != None:
-        entity.Physics.Update()
+&lt;p&gt;Entities and systems do not store data, meaning data is entirely managed by components. The data of the same type of component is stored in adjacent locations on the hard drive (even though it may belong to different entities), making CPU access very efficient. This is due to the CPU’s caching mechanism, where each time data is read from the hard drive, not only the specific address is read, but data from adjacent locations is also read.&lt;/p&gt;
+
+&lt;p&gt;For example, the physics system needs to update the positions of all entities in the game:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# OOP:
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Physics&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Physics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# ECS
-for component in physicsComponents:
-    component.Update()
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# ECS
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;physicsComponents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;很显然，ECS避免了对所有entity的遍历。而OOP不仅不要遍历的entity更多，需要访问的数据实际上分布在内存个不同地方，地址的来回跳转会消耗大量的时间。&lt;/p&gt;
+&lt;p&gt;Obviously, ECS avoids iterating over all entities. OOP not only iterates over unnecessary entities but also accesses data scattered across different memory locations, with the back-and-forth jumping of addresses consuming a lot of time.&lt;/p&gt;
 
-&lt;p&gt;在更加底层，ECS使用了内存对齐和Entity内存分布器，Chunk等设计来优化内存管理，这里就不展开了。&lt;/p&gt;
+&lt;p&gt;At a deeper level, ECS uses memory alignment and entity memory allocators, and Chunk design to optimize memory management, which won’t be elaborated on here.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;数据和逻辑解耦&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Decoupling Data and Logic&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;正如上面提到的，Component负责数据，而System负责逻辑，这就达成了数据和逻辑的解耦。这使得多核CPU并行处理时更加方便，不同的系统可以并行处理不同的组件数据。&lt;/p&gt;
+&lt;p&gt;As mentioned above, components are responsible for data, while systems are responsible for logic, achieving the decoupling of data and logic. This makes it easier for multi-core CPUs to handle parallel processing, allowing different systems to process different component data concurrently.&lt;/p&gt;
 
-&lt;h3 id=&quot;ecs-如何运行一个游戏&quot;&gt;ECS 如何运行一个游戏&lt;/h3&gt;
+&lt;h3 id=&quot;how-ecs-runs-a-game&quot;&gt;How ECS Runs a Game&lt;/h3&gt;
 
-&lt;p&gt;游戏一般是由一个主循环驱动，每一帧调用Update函数对游戏进行更新。游戏更新，说白了，其实就是System的更新，因为它包含了所有的逻辑，调用他们对数据，也就是Component进行更改就好了&lt;/p&gt;
+&lt;p&gt;A game is generally driven by a main loop, which calls the Update function to update the game each frame. Game updates, essentially, are system updates, as they contain all the logic, and calling them to modify data, which is the component, is sufficient.&lt;/p&gt;
 
-&lt;h4 id=&quot;system的分类&quot;&gt;System的分类&lt;/h4&gt;
-&lt;p&gt;System一般分为两种，React System和Update System。而不管哪一种Sytem，都有两个必要的函数：Process() 和 OnProcess()。&lt;/p&gt;
+&lt;h4 id=&quot;classification-of-systems&quot;&gt;Classification of Systems&lt;/h4&gt;
+&lt;p&gt;Systems are generally divided into two types, React System and Update System. Regardless of the type of system, there are two necessary functions: Process() and OnProcess().&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;OnProcess接收一个Entity对象，它将对一个Entity的特定Component进行修改更新。&lt;/li&gt;
-  &lt;li&gt;Process则是更新整个系统，他会对所有需要更新Entity调用OnProcess。&lt;/li&gt;
+  &lt;li&gt;OnProcess receives an Entity object and updates a specific component of the Entity.&lt;/li&gt;
+  &lt;li&gt;Process updates the entire system and calls OnProcess for all entities that need updating.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;UpdateSystem，代表需要定时更新的系统，比如 生命恢复，或者物理系统。这种系统一般是对所有具有特定Component的Entity进行更新，所以找出所有这样的Entity，并调用OnProcess即可&lt;/p&gt;
+&lt;p&gt;UpdateSystem represents systems that need to be updated regularly, such as health recovery or the physics system. These systems generally update all entities with specific components, so finding all such entities and calling OnProcess is enough.&lt;/p&gt;
 
-&lt;p&gt;ReactSystem，代表特定条件触发的系统，所以哪个Entity需要进行更新是由其他因素决定的。这类系统会储存一个 _listCache，来储存需要更新的Entity。&lt;/p&gt;
+&lt;p&gt;ReactSystem represents systems triggered by specific conditions, so which entities need updating is determined by other factors. This type of system stores a _listCache to store the entities that need updating.&lt;/p&gt;
 
-&lt;h3 id=&quot;客户端与服务器&quot;&gt;客户端与服务器&lt;/h3&gt;
+&lt;h3 id=&quot;client-and-server&quot;&gt;Client and Server&lt;/h3&gt;
+&lt;p&gt;Ideally, assuming the server has infinite performance, all game logic would be calculated by the server, and the server would only need to transmit data to the client for display. This reduces the burden on the client, no longer requiring high-performance CPUs and GPUs, and prevents any cheating since hacking the server would be overkill.&lt;/p&gt;
+
+&lt;p&gt;But usually, the client will handle part of the game logic. If the server handles all the computations, the processing load would be overwhelming, especially for large online games like LOL, which may have tens of thousands of games running simultaneously, leading to latency issues. This also creates opportunities for cheating. In the most common FPS games, shooting calculations are typically handled by the client. If they were calculated by the server and then sent back to the client, it would cause severe delays, such as seeing yourself shoot, but the bullet isn’t fired until half a second later. Cheats can modify the client’s data, such as bullet positions, to cheat, commonly known as magic bullets.&lt;/p&gt;
+
+&lt;p&gt;Of course, the game can regularly check server data or use anti-cheat plugins to detect modifications. But these methods only increase the cost of cheating and cannot completely prevent it. After all, the machine is in the player’s hands, giving them absolute control. No matter how powerful anti-cheat software is, it cannot access the underlying memory, but the player can. This is the principle behind DMA (Direct Memory Access) cheats, which cheat by directly accessing and modifying memory.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-communicate&quot;&gt;How to Communicate?&lt;/h4&gt;
+
+&lt;p&gt;A game usually have a CoreGame, which is the core logic of the game. This logic is constructed using the ECS architecture. TBA&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
@@ -223,9 +453,9 @@ for component in physicsComponents:
   &lt;li&gt;https://blog.csdn.net/u012861978/article/details/132397770&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Thu, 01 Aug 2024 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2024/08/01/%E5%85%B3%E4%BA%8EUnity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%86%E8%A7%A3/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/08/01/%E5%85%B3%E4%BA%8EUnity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%86%E8%A7%A3/</guid>
+        <pubDate>Thu, 01 Aug 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/08/01/UnityGameFramework-zh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/08/01/UnityGameFramework-zh/</guid>
         
         <category>Unity</category>
         
@@ -237,42 +467,12 @@ for component in physicsComponents:
       </item>
     
       <item>
-        <title>Omnigame Internship</title>
-        <description>&lt;h1 id=&quot;project-summary&quot;&gt;Project Summary&lt;/h1&gt;
-
-&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
-
-&lt;p&gt;This project involved various aspects of software development, focusing on game development, server management, and advanced programming concepts. The work encompassed a broad range of tasks, from setting up and managing servers to developing game logic and integrating various tools and technologies.&lt;/p&gt;
-
-&lt;h2 id=&quot;key-accomplishments&quot;&gt;Key Accomplishments&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Data Analysis&lt;/strong&gt;: Utilized tools like Python and MongoDB to analyze and manage data effectively.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;AWS Management&lt;/strong&gt;: Implemented and managed AWS resources to ensure smooth server operations.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Server Updates&lt;/strong&gt;: Regularly updated server configurations and handled HTTP requests efficiently.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Client and Server Interaction&lt;/strong&gt;: Developed mechanisms for seamless communication between the client and server, ensuring robust and reliable data exchange.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Game Development&lt;/strong&gt;: Worked on enhancing game features using the Entity Component System (ECS) architecture for better performance and scalability.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Tool Integration&lt;/strong&gt;: Successfully integrated various development tools, including Unity, Rider, and Perforce, to streamline the workflow and enhance productivity.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Protobuf and RPC&lt;/strong&gt;: Utilized Protobuf for defining data structures and Remote Procedure Call (RPC) for efficient communication between different components.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;important-learnings&quot;&gt;Important Learnings&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Effective Data Management&lt;/strong&gt;: Leveraging modern tools for data analysis and management can significantly improve efficiency.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Cloud Services&lt;/strong&gt;: Proper use of cloud services like AWS is crucial for maintaining scalable and reliable server infrastructure.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Modular Architecture&lt;/strong&gt;: Adopting ECS and other modular approaches enhances the flexibility and performance of game development projects.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Tool Integration&lt;/strong&gt;: Seamless integration of development tools can greatly streamline the development process and reduce overhead.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Communication Protocols&lt;/strong&gt;: Understanding and implementing communication protocols such as RPC is essential for robust client-server interactions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;The project provided a comprehensive experience in managing and developing large-scale software systems. The key takeaway is the importance of efficient data management, scalable infrastructure, and robust communication protocols. By integrating various tools and adopting modular architectures, the project achieved significant improvements in performance and productivity.&lt;/p&gt;
+        <title>奥蒙妮游戏实习</title>
+        <description>
 </description>
-        <pubDate>Tue, 02 Jul 2024 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2024/07/02/omnigame/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/07/02/omnigame/</guid>
+        <pubDate>Tue, 02 Jul 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/07/02/Omnigame-zh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/07/02/Omnigame-zh/</guid>
         
         <category>C#</category>
         
@@ -284,217 +484,80 @@ for component in physicsComponents:
       </item>
     
       <item>
-        <title>Cooperator - Fully automated github repo translator</title>
-        <description>&lt;h1 id=&quot;localizing-github-repositories-with-llms&quot;&gt;Localizing GitHub Repositories with LLMs&lt;/h1&gt;
+        <title>Omnigame Internship</title>
+        <description>&lt;h3 id=&quot;project-brief&quot;&gt;Project Brief&lt;/h3&gt;
 
-&lt;p&gt;Many established software teams work across multiple locations, basing their work on GitHub repositories. Such teams consist of people across different languages and cultures.&lt;/p&gt;
+&lt;p&gt;The project is cooperating with Amazon AWS Team, Use reinforcement learning to train AI agent in our gameplay. Our game &lt;a href=&quot;https://store.steampowered.com/app/2525990/Quad_Battle/&quot;&gt;Quad Battle&lt;/a&gt; is a multiplayer online game, combining MOBA, Monopoly, and auto chess. The game aim to be published by next year, play it if you like!&lt;/p&gt;
 
-&lt;p&gt;It is common practice for large repositories to undergo localization procedures, which involves translating documentation files in such a way that preserve the context of work.&lt;/p&gt;
+&lt;p&gt;In this project, I’m mainly responsible includes building and maintaining server, modify communication protocal, provide interface for AWS team, and modify game structure according to requirements.&lt;/p&gt;
 
-&lt;p&gt;For example, if you had the following Python code in English:&lt;/p&gt;
+&lt;h3 id=&quot;rl-design-challenges&quot;&gt;RL Design Challenges&lt;/h3&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# test the Python print function
-&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Hello World&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Conventional reinforcement learning use game like chess, while this game is much more complex. Player have abilities, and Map have different tools, so many effect were used to define state, action and reward&lt;/p&gt;
 
-&lt;p&gt;It would look like this in French:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# tester la fonction print en Python
-&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Bonjour le monde&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;While this is a simple example, there exist small nuances that require us to pay attention to the context of the example. For example, the Python function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;print&lt;/code&gt; cannot be translated into another language. The hash (#), that denotes the comment also has to be left unmodified even during the translation. Paying attention to small details is not something conventional machine translation methods (used in tools such as Google Translate) are developed for.&lt;/p&gt;
-
-&lt;p&gt;Given the nature of this work, localization is not a trivial task. At Microsoft, there are localization teams hired to produce culturally and professionally accurate versions of documentation, reports, and guides for codebases. Tasks like these can take up to several months to finish.&lt;/p&gt;
-
-&lt;p&gt;Fortunately, this task is something large language models (LLMs) excel at compared to machine translation, as they process tokens of text in a context window. LLMs use attention mechanisms to weigh the relevance of each token relative to others in the sequence, allowing them to capture nuanced meanings and contextual dependencies effectively.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/adv_of_lms.png&quot; alt=&quot;advantages of lm&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Our team at Imperial College London has worked with Microsoft to realize the potential of LLMs in the localization process, including noting any interesting behaviors and useful takeaways of what is currently possible with existing technologies provided by Azure and OpenAI.&lt;/p&gt;
-
-&lt;h2 id=&quot;introducing-a-proof-of-concept-github-app&quot;&gt;Introducing a Proof-of-Concept GitHub App&lt;/h2&gt;
-
-&lt;p&gt;As part of the project, our team built a simple GitHub app based off Django and React, with the former framework utilizing Python to quickly build and iterate an app that would look for a configuration file on an installed GitHub repository, and then Markdown files on the repo.&lt;/p&gt;
-
-&lt;p&gt;The app opts for a simple configuration:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We use English as the universal language (although theoretically, we can have this set to any other language). Any translations made by the app are stored in a separate branch that follows the main branch. Every time main is updated by the user, the app pushes to the translation branch and makes a PR to main.&lt;/li&gt;
-  &lt;li&gt;A yml configuration file lists the directory of the documentation folder and the desired languages to be translated into.&lt;/li&gt;
-  &lt;li&gt;Any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.md&lt;/code&gt; files in the repository are automatically translated – the translated READMEs are placed in a folder of translations adjacent to the original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.md&lt;/code&gt; file in English.&lt;/li&gt;
-  &lt;li&gt;All markdown files in the documentation directory are automatically translated. The documentation directory also contains translation folders by language. Each translation folder mirrors the structure of the documentation directory in English.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/project_root
-    /docs
-        /installation.md
-        /screenshot.png
-        /api
-            /services.md
-        /usage.md
-        /fr
-            /installation.md
-            /usage.md
-            /api
-                /services.md
-        /es
-            /installation.md
-            /usage.md
-            /api
-                /services.md
-        /translated_images
-            /screenshot&amp;lt;hash&amp;gt;.fr.png
-            /screenshot&amp;lt;hash&amp;gt;.es.png
-    /src
-        /readme.md
-        /readme_img.png
-        /translations
-            /readme.fr.md
-            /readme.es.md
-        /translated_images
-            /readme_img&amp;lt;hash&amp;gt;.fr.png
-            /readme_img&amp;lt;hash&amp;gt;.es.png
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/app_structure.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;properly-translating-a-markdown-file&quot;&gt;Properly Translating a Markdown File&lt;/h2&gt;
-
-&lt;p&gt;There are three aspects to translating a markdown file:&lt;/p&gt;
-
+&lt;h4 id=&quot;state&quot;&gt;State&lt;/h4&gt;
 &lt;ol&gt;
-  &lt;li&gt;Getting the text translations correct&lt;/li&gt;
-  &lt;li&gt;Getting the code block translations precise&lt;/li&gt;
-  &lt;li&gt;Translating the images in the Markdown file.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;text-translation&quot;&gt;Text Translation&lt;/h3&gt;
-
-&lt;p&gt;This was a relatively straightforward task requiring minimal prompting – our tests with GPT models were generally very accurate (even with RTL languages like Arabic). At the time of testing, GPT-4o and GPT-4 were accurate most of the time for high-resource languages and performed moderately on low-resource languages. GPT-3.5 performed adequately for common high-resource languages but struggled with low-resource languages.&lt;/p&gt;
-
-&lt;p&gt;This article covers a deeper definition of low-resource languages, which tend to be less commonly spoken in the world. Naturally, there is a lack of training data in such low-resource languages used to train language models, which leads to poorer performance in tasks that involve low-resource languages compared to completing tasks in high-resource languages. This behavior is observed in many leading LLMs today, such as from Claude, Llama, Mistral, and GPT. There exist initiatives such as Cohere for AI that try to solve the low-resource language problem with dedicated multilingual models such as Aya, but they are out of the scope of this article.&lt;/p&gt;
-
-&lt;h3 id=&quot;code-block-translation&quot;&gt;Code Block Translation&lt;/h3&gt;
-
-&lt;p&gt;To our surprise, translating code blocks in Markdown came naturally to most LLMs. Since a lot of training data for GPTs consist of a lot of code, the GPT models perform very well on translating comments while preserving the structure of code syntax in code blocks.&lt;/p&gt;
-
-&lt;h3 id=&quot;image-translation&quot;&gt;Image Translation&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/image_translation.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Markdown files can contain images – in most cases these images are stored locally within the repository. All the images in the repository get translated and their translated copies are stored within the repo, and then after the Markdown files are translated, regex is used to find all image links and replace them with their translated variants.&lt;/p&gt;
-
-&lt;p&gt;Current state of the art diffusion cannot be reliably prompted to generate translated versions of images due to their probabilistic nature – they are good at generating new images from scratch but cannot imitate the structure of previous images.&lt;/p&gt;
-
-&lt;p&gt;Generating new images would also be computationally expensive, so we developed a novel way of using a mix of OCR services and GPT models to translate images:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Use Azure’s Image Analysis API to detect text lines and their bounding boxes&lt;/li&gt;
-  &lt;li&gt;Feed the detected text lines into GPT to be translated&lt;/li&gt;
-  &lt;li&gt;Replace each text line with translated variant&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;This is not a perfect solution, but text replacement works. It was also agreed with our supervisor that overlaying text would be more legally feasible because there was no generation of new images of similar likeness, which carries copyright implications.&lt;/p&gt;
-
-&lt;h2 id=&quot;more-detailed-information-about-the-app&quot;&gt;More Detailed Information about the App&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Django backend, React frontend&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;translation-process&quot;&gt;Translation Process&lt;/h3&gt;
-&lt;h4 id=&quot;installation&quot;&gt;Installation&lt;/h4&gt;
-&lt;p&gt;Users start by installing GitHub app on repositories or organization selected, those repositories will be recorded in SQLite database, and displayed on webpage once you logged in. A robot account will be invited to those repositories.&lt;/p&gt;
-
-&lt;h4 id=&quot;initial-translation&quot;&gt;Initial Translation&lt;/h4&gt;
-&lt;p&gt;Once you activate translation on webpage, a new branch “co-op-translator” will be created, then all document files/images will be read and translated by backend server, then uploaded to the new branch. Pull request will then be created from “co-op-translator” to main branch. Note that all changes to repositories will be performed by the robot account, as it’s easier to manage.&lt;/p&gt;
-
-&lt;h4 id=&quot;tracking-stage&quot;&gt;Tracking Stage&lt;/h4&gt;
-&lt;p&gt;Repositories will be further tracked. GitHub app is subscribed to events (main branch update, delete of pull requests), modified or added document in new commit will be translated and updated on the “co-op-translator” branch, old pull request will be replaced by a new one.&lt;/p&gt;
-
-&lt;h3 id=&quot;edge-cases-and-interesting-behavior&quot;&gt;Edge Cases and Interesting Behavior&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Fixed:&lt;/strong&gt; The GPT model would hallucinate translated short 1-liner markdown files:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;INPUT:&lt;/strong&gt;
-        &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;# Example Hello World in Markdown&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;OUTPUT (translated into Spanish):&lt;/strong&gt;
-        &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;# Ejemplo de &quot;Hello World&quot; en Markdown&lt;/span&gt;
-    
-Este es un archivo &lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt;README.md&lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt; simple para demostrar el formato de Markdown en GitHub.
-    
-&lt;span class=&quot;gu&quot;&gt;## Características&lt;/span&gt;
-    
-Este documento incluye:
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; Etiquetas de &lt;span class=&quot;gs&quot;&gt;**encabezado**&lt;/span&gt; (&lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt;#&lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt;)
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;gs&quot;&gt;**Bloque de código**&lt;/span&gt; para resaltado de sintaxis
-&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; Formato en &lt;span class=&quot;gs&quot;&gt;**negrita**&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We tried to prompt the model with the prompt:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;“NEVER ADD ANY EXTRA CONTENT OUTSIDE THE TRANSLATION. TRANSLATE ONLY WHAT IS GIVEN TO YOU. MAINTAIN MARKDOWN FORMAT”
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This worked, but the model would fail to translate longer files properly. So, we have a dynamic prompt – for files with less than 2 lines, we use the prompt for shorter files, and for files with more than 2 lines, we use the original prompt.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Issues in Image Context:&lt;/strong&gt; Sometimes due to the way image text is extracted, they are parsed line by line in order of appearance from left to right, then top to bottom. However, this order might not reflect the structure of objects in the text, and sometimes context can be confusing to the model as it has no spatial awareness of the text.&lt;/p&gt;
-
-&lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Example Image, two cards of text:&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/two_cards.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;Extracted Text (-&amp;gt; French translation)
-        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Section 1: -&amp;gt; Section 1:
-Section 2: -&amp;gt; Section 2:
-My favourite tech -&amp;gt; Ma technologie préférée
-My favourite fruit -&amp;gt; Mon fruit préféré:
-company: Apple -&amp;gt; société: Apple
-: Apple -&amp;gt; : Apple? Pomme?
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Expected Output
-&lt;img src=&quot;http://localhost:4000/assets/cooperator/expected_output.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Actual Output (using line to line replacement)
-&lt;img src=&quot;http://localhost:4000/assets/cooperator/actual_output.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;p&gt;Player’s Position. The map in grid form, so x-y coordinateds can be used to define positon. It’s easier then conventional MOBA game, where player’s position is continous.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Teammates State. The game is usually in a team of 4, so Teammates’ state and Enemies’ state is also considered. This includes positon, health and score.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Map info: there are different tools for player to use on the map, some of then are generated dynamicly, so it’s necessary to put this into consideration.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;Note that the translation of “Apple” could be confused between either the company name in French (also called Apple), or the fruit (pomme). Note that there is also a small grammatical error as ‘tech company’ has been split up, so the context has lost track of the lines. This is because ‘tech company’ is reversed in French to be ‘société tech’ or ‘company tech’.&lt;/p&gt;
+&lt;h4 id=&quot;action&quot;&gt;Action&lt;/h4&gt;
+&lt;p&gt;This is more complex, as Each character have it’s unique ability.&lt;/p&gt;
 
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Move/Attack:&lt;/li&gt;
+  &lt;li&gt;Use ability&lt;/li&gt;
+  &lt;li&gt;Buy/Sell minions&lt;/li&gt;
+  &lt;li&gt;Make tech choice&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;Take this example, of a Microsoft Guide for Generative AI in English. This is the app’s translated French version. Note that translations do not work with externally linked images.&lt;/p&gt;
+&lt;h4 id=&quot;reward&quot;&gt;Reward&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Winner Score: Once Score reach 3000, the team wins, so this is important&lt;/li&gt;
+  &lt;li&gt;castle health: Like most MOBA, if the crystal is destroyed, the team loose immediately, so health of castle including crystal is also important&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;aws-manager-server-design&quot;&gt;AWS Manager Server Design&lt;/h3&gt;
+&lt;p&gt;Quad Battle is a online game, so game needs to run on a server, seperate from AWS training agents. Also, there many be more then one agent in a battle, and more then one battle running at the same time. So it’s necessary to build a seperate server, AWS Manager, to Manage diffent battle and agnets.&lt;/p&gt;
+
+&lt;p&gt;AWS Manager use HTTP to accept requests.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;CreateBattle: Create a new battle&lt;/li&gt;
+  &lt;li&gt;DeleteeBattle: End a battle&lt;/li&gt;
+  &lt;li&gt;UpdateBattle: Update a Battle, make it proceed by a given time interval.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Since UpdateBattle will be called very frequently, a ProducerConsumerQueue is used to optimize. Update requests will be stored in this messagequeue, and workers can retrive and complete the update task from the queue asynchronously.&lt;/p&gt;
+
+&lt;p&gt;For a certain battle, a protobuf protocal is used to define TCP messages between client and server.
+Because Training require frequent update of state infomation, I create a messge ReconnectMsg. This is modified from the Message responsible for reconnection, because reconnection require most of the current game status.&lt;/p&gt;
+
+&lt;h3 id=&quot;game-modify&quot;&gt;Game Modify&lt;/h3&gt;
+&lt;p&gt;For Reinforcement Learning, a gameplay can be done in under one minute. To improve efficiency, This require us to modify the game, enable it to speed up according to update speed of training agent.&lt;/p&gt;
+
+&lt;p&gt;Quad Battle use a ECS Structure, and there’s a component corresponding for managing gametime. This component use real-world time to update it’s value.&lt;/p&gt;
+
+&lt;p&gt;Inorder to achieve game acceleration, I created a new component to handle time. But instead of using real-world time, i set a fixed time for each game frame. So eachtime it’s updated, the game is processed by a constant time.&lt;/p&gt;
+
+&lt;p&gt;UpdateBattle, the HTTP request handled by AWS Manager, will update the game component. Training agent can send this request to AWS Manager to inform it’s ready for it’s next step. By doing this, the agent can control the game to go that it’s speed.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 02 May 2024 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2024/05/02/Cooperator-en/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/05/02/Cooperator-en/</guid>
+        <pubDate>Tue, 02 Jul 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/07/02/Omnigame-en/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/07/02/Omnigame-en/</guid>
         
-        <category>Django</category>
+        <category>C#</category>
         
-        <category>Sqlite</category>
+        <category>Unity</category>
         
-        <category>LLM</category>
-        
-        <category>Azure</category>
-        
-        <category>Github</category>
-        
-        <category>Project</category>
+        <category>Internship</category>
         
         
       </item>
@@ -696,9 +759,9 @@ company: Apple -&amp;gt; société: Apple
 
 &lt;p&gt;Take this example, of a Microsoft Guide for Generative AI in English. This is the app’s translated French version. Note that translations do not work with externally linked images.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 02 May 2024 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2024/05/02/Cooperator-cn/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/05/02/Cooperator-cn/</guid>
+        <pubDate>Thu, 02 May 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/05/02/Cooperator-zh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/05/02/Cooperator-zh/</guid>
         
         <category>Django</category>
         
@@ -716,329 +779,261 @@ company: Apple -&amp;gt; société: Apple
       </item>
     
       <item>
-        <title>Machine Learning Internship</title>
-        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+        <title>Cooperator - Fully automated github repo translator</title>
+        <description>&lt;h1 id=&quot;localizing-github-repositories-with-llms&quot;&gt;Localizing GitHub Repositories with LLMs&lt;/h1&gt;
 
-&lt;h3 id=&quot;paper-published&quot;&gt;Paper Published&lt;/h3&gt;
-&lt;p&gt;The research paper is published on DATE. You can view the paper &lt;a href=&quot;https://arxiv.org/abs/2406.03088&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Many established software teams work across multiple locations, basing their work on GitHub repositories. Such teams consist of people across different languages and cultures.&lt;/p&gt;
+
+&lt;p&gt;It is common practice for large repositories to undergo localization procedures, which involves translating documentation files in such a way that preserve the context of work.&lt;/p&gt;
+
+&lt;p&gt;For example, if you had the following Python code in English:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# test the Python print function
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Hello World&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It would look like this in French:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# tester la fonction print en Python
+&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Bonjour le monde&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;While this is a simple example, there exist small nuances that require us to pay attention to the context of the example. For example, the Python function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;print&lt;/code&gt; cannot be translated into another language. The hash (#), that denotes the comment also has to be left unmodified even during the translation. Paying attention to small details is not something conventional machine translation methods (used in tools such as Google Translate) are developed for.&lt;/p&gt;
+
+&lt;p&gt;Given the nature of this work, localization is not a trivial task. At Microsoft, there are localization teams hired to produce culturally and professionally accurate versions of documentation, reports, and guides for codebases. Tasks like these can take up to several months to finish.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, this task is something large language models (LLMs) excel at compared to machine translation, as they process tokens of text in a context window. LLMs use attention mechanisms to weigh the relevance of each token relative to others in the sequence, allowing them to capture nuanced meanings and contextual dependencies effectively.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/adv_of_lms.png&quot; alt=&quot;advantages of lm&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our team at Imperial College London has worked with Microsoft to realize the potential of LLMs in the localization process, including noting any interesting behaviors and useful takeaways of what is currently possible with existing technologies provided by Azure and OpenAI.&lt;/p&gt;
+
+&lt;h2 id=&quot;introducing-a-proof-of-concept-github-app&quot;&gt;Introducing a Proof-of-Concept GitHub App&lt;/h2&gt;
+
+&lt;p&gt;As part of the project, our team built a simple GitHub app based off Django and React, with the former framework utilizing Python to quickly build and iterate an app that would look for a configuration file on an installed GitHub repository, and then Markdown files on the repo.&lt;/p&gt;
+
+&lt;p&gt;The app opts for a simple configuration:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We use English as the universal language (although theoretically, we can have this set to any other language). Any translations made by the app are stored in a separate branch that follows the main branch. Every time main is updated by the user, the app pushes to the translation branch and makes a PR to main.&lt;/li&gt;
+  &lt;li&gt;A yml configuration file lists the directory of the documentation folder and the desired languages to be translated into.&lt;/li&gt;
+  &lt;li&gt;Any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.md&lt;/code&gt; files in the repository are automatically translated – the translated READMEs are placed in a folder of translations adjacent to the original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.md&lt;/code&gt; file in English.&lt;/li&gt;
+  &lt;li&gt;All markdown files in the documentation directory are automatically translated. The documentation directory also contains translation folders by language. Each translation folder mirrors the structure of the documentation directory in English.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/project_root
+    /docs
+        /installation.md
+        /screenshot.png
+        /api
+            /services.md
+        /usage.md
+        /fr
+            /installation.md
+            /usage.md
+            /api
+                /services.md
+        /es
+            /installation.md
+            /usage.md
+            /api
+                /services.md
+        /translated_images
+            /screenshot&amp;lt;hash&amp;gt;.fr.png
+            /screenshot&amp;lt;hash&amp;gt;.es.png
+    /src
+        /readme.md
+        /readme_img.png
+        /translations
+            /readme.fr.md
+            /readme.es.md
+        /translated_images
+            /readme_img&amp;lt;hash&amp;gt;.fr.png
+            /readme_img&amp;lt;hash&amp;gt;.es.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/app_structure.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;properly-translating-a-markdown-file&quot;&gt;Properly Translating a Markdown File&lt;/h2&gt;
+
+&lt;p&gt;There are three aspects to translating a markdown file:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Getting the text translations correct&lt;/li&gt;
+  &lt;li&gt;Getting the code block translations precise&lt;/li&gt;
+  &lt;li&gt;Translating the images in the Markdown file.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;text-translation&quot;&gt;Text Translation&lt;/h3&gt;
+
+&lt;p&gt;This was a relatively straightforward task requiring minimal prompting – our tests with GPT models were generally very accurate (even with RTL languages like Arabic). At the time of testing, GPT-4o and GPT-4 were accurate most of the time for high-resource languages and performed moderately on low-resource languages. GPT-3.5 performed adequately for common high-resource languages but struggled with low-resource languages.&lt;/p&gt;
+
+&lt;p&gt;This article covers a deeper definition of low-resource languages, which tend to be less commonly spoken in the world. Naturally, there is a lack of training data in such low-resource languages used to train language models, which leads to poorer performance in tasks that involve low-resource languages compared to completing tasks in high-resource languages. This behavior is observed in many leading LLMs today, such as from Claude, Llama, Mistral, and GPT. There exist initiatives such as Cohere for AI that try to solve the low-resource language problem with dedicated multilingual models such as Aya, but they are out of the scope of this article.&lt;/p&gt;
+
+&lt;h3 id=&quot;code-block-translation&quot;&gt;Code Block Translation&lt;/h3&gt;
+
+&lt;p&gt;To our surprise, translating code blocks in Markdown came naturally to most LLMs. Since a lot of training data for GPTs consist of a lot of code, the GPT models perform very well on translating comments while preserving the structure of code syntax in code blocks.&lt;/p&gt;
+
+&lt;h3 id=&quot;image-translation&quot;&gt;Image Translation&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/image_translation.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Markdown files can contain images – in most cases these images are stored locally within the repository. All the images in the repository get translated and their translated copies are stored within the repo, and then after the Markdown files are translated, regex is used to find all image links and replace them with their translated variants.&lt;/p&gt;
+
+&lt;p&gt;Current state of the art diffusion cannot be reliably prompted to generate translated versions of images due to their probabilistic nature – they are good at generating new images from scratch but cannot imitate the structure of previous images.&lt;/p&gt;
+
+&lt;p&gt;Generating new images would also be computationally expensive, so we developed a novel way of using a mix of OCR services and GPT models to translate images:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Use Azure’s Image Analysis API to detect text lines and their bounding boxes&lt;/li&gt;
+  &lt;li&gt;Feed the detected text lines into GPT to be translated&lt;/li&gt;
+  &lt;li&gt;Replace each text line with translated variant&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is not a perfect solution, but text replacement works. It was also agreed with our supervisor that overlaying text would be more legally feasible because there was no generation of new images of similar likeness, which carries copyright implications.&lt;/p&gt;
+
+&lt;h2 id=&quot;more-detailed-information-about-the-app&quot;&gt;More Detailed Information about the App&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Django backend, React frontend&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;translation-process&quot;&gt;Translation Process&lt;/h3&gt;
+&lt;h4 id=&quot;installation&quot;&gt;Installation&lt;/h4&gt;
+&lt;p&gt;Users start by installing GitHub app on repositories or organization selected, those repositories will be recorded in SQLite database, and displayed on webpage once you logged in. A robot account will be invited to those repositories.&lt;/p&gt;
+
+&lt;h4 id=&quot;initial-translation&quot;&gt;Initial Translation&lt;/h4&gt;
+&lt;p&gt;Once you activate translation on webpage, a new branch “co-op-translator” will be created, then all document files/images will be read and translated by backend server, then uploaded to the new branch. Pull request will then be created from “co-op-translator” to main branch. Note that all changes to repositories will be performed by the robot account, as it’s easier to manage.&lt;/p&gt;
+
+&lt;h4 id=&quot;tracking-stage&quot;&gt;Tracking Stage&lt;/h4&gt;
+&lt;p&gt;Repositories will be further tracked. GitHub app is subscribed to events (main branch update, delete of pull requests), modified or added document in new commit will be translated and updated on the “co-op-translator” branch, old pull request will be replaced by a new one.&lt;/p&gt;
+
+&lt;h3 id=&quot;edge-cases-and-interesting-behavior&quot;&gt;Edge Cases and Interesting Behavior&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Fixed:&lt;/strong&gt; The GPT model would hallucinate translated short 1-liner markdown files:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;INPUT:&lt;/strong&gt;
+        &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;# Example Hello World in Markdown&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;OUTPUT (translated into Spanish):&lt;/strong&gt;
+        &lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;# Ejemplo de &quot;Hello World&quot; en Markdown&lt;/span&gt;
+    
+Este es un archivo &lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt;README.md&lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt; simple para demostrar el formato de Markdown en GitHub.
+    
+&lt;span class=&quot;gu&quot;&gt;## Características&lt;/span&gt;
+    
+Este documento incluye:
+&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; Etiquetas de &lt;span class=&quot;gs&quot;&gt;**encabezado**&lt;/span&gt; (&lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt;#&lt;span class=&quot;se&quot;&gt;\`&lt;/span&gt;)
+&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;gs&quot;&gt;**Bloque de código**&lt;/span&gt; para resaltado de sintaxis
+&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; Formato en &lt;span class=&quot;gs&quot;&gt;**negrita**&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We tried to prompt the model with the prompt:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;“NEVER ADD ANY EXTRA CONTENT OUTSIDE THE TRANSLATION. TRANSLATE ONLY WHAT IS GIVEN TO YOU. MAINTAIN MARKDOWN FORMAT”
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This worked, but the model would fail to translate longer files properly. So, we have a dynamic prompt – for files with less than 2 lines, we use the prompt for shorter files, and for files with more than 2 lines, we use the original prompt.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Issues in Image Context:&lt;/strong&gt; Sometimes due to the way image text is extracted, they are parsed line by line in order of appearance from left to right, then top to bottom. However, this order might not reflect the structure of objects in the text, and sometimes context can be confusing to the model as it has no spatial awareness of the text.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Example Image, two cards of text:&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/cooperator/two_cards.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Extracted Text (-&amp;gt; French translation)
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Section 1: -&amp;gt; Section 1:
+Section 2: -&amp;gt; Section 2:
+My favourite tech -&amp;gt; Ma technologie préférée
+My favourite fruit -&amp;gt; Mon fruit préféré:
+company: Apple -&amp;gt; société: Apple
+: Apple -&amp;gt; : Apple? Pomme?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Expected Output
+&lt;img src=&quot;http://localhost:4000/assets/cooperator/expected_output.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Actual Output (using line to line replacement)
+&lt;img src=&quot;http://localhost:4000/assets/cooperator/actual_output.png&quot; alt=&quot;app structure&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that the translation of “Apple” could be confused between either the company name in French (also called Apple), or the fruit (pomme). Note that there is also a small grammatical error as ‘tech company’ has been split up, so the context has lost track of the lines. This is because ‘tech company’ is reversed in French to be ‘société tech’ or ‘company tech’.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;Take this example, of a Microsoft Guide for Generative AI in English. This is the app’s translated French version. Note that translations do not work with externally linked images.&lt;/p&gt;
 </description>
-        <pubDate>Sat, 01 Jul 2023 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2023/07/01/Deepwok-Lab/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/07/01/Deepwok-Lab/</guid>
+        <pubDate>Thu, 02 May 2024 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2024/05/02/Cooperator-en/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/05/02/Cooperator-en/</guid>
+        
+        <category>Django</category>
+        
+        <category>Sqlite</category>
+        
+        <category>LLM</category>
+        
+        <category>Azure</category>
+        
+        <category>Github</category>
+        
+        <category>Project</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>机器学习科研</title>
+        <description>&lt;h3 id=&quot;项目概述&quot;&gt;项目概述&lt;/h3&gt;
+&lt;p&gt;深度神经网络（DNN）在部署于定制的硬件加速器上时，能够实现高性能和高能效。数据流架构由于其层级流水结构和可扩展性，特别有效。&lt;/p&gt;
+
+&lt;p&gt;当前用于利用权重和激活稀疏性的方法往往忽视了数据流架构，从而错失了优化机会。我们提出了硬件感知稀疏性搜索（HASS），这是一种通过软硬件协同优化在数据流加速器中利用稀疏性的新方法。HASS系统地寻找有效的稀疏性解决方案，相比现有设计取得了显著的改进。&lt;/p&gt;
+
+&lt;h3 id=&quot;贡献&quot;&gt;贡献&lt;/h3&gt;
+
+&lt;p&gt;我的大部分工作是&lt;a href=&quot;https://github.com/jianyicheng/mase-tools&quot;&gt;MASE&lt;/a&gt;上的软件开发，更具体地说，是MASE的软件栈Machop的开发。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/jianyicheng/mase-tools&quot;&gt;Mase（机器学习加速器系统探索工具）&lt;/a&gt;&lt;/strong&gt; 提供了一种高效且可扩展的方法，通过直接映射到高效的流式加速器系统，探索用于计算大型ML模型的加速器系统。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mase提供了命令行接口，可以使用指定的数据集从零开始训练模型。为了评估新的数据流加速器的效率，我在Mase中集成了RepVGG模型的支持，整理并记录了详细的操作流程供未来开发者使用。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对DNN硬件加速器的探索需要硬件-软件协同仿真。我协助编写了将元数据发送给硬件团队的脚本，这有助于验证硬件实现的完整性并识别差异。脚本包括：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;转换脚本：&lt;/strong&gt; 对指定模型运行转换过程，例如量化或剪枝。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;搜索脚本：&lt;/strong&gt; 在搜索空间上应用给定的搜索策略，以优化指定的一组硬件/软件指标。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;论文发表&quot;&gt;论文发表&lt;/h3&gt;
+
+&lt;p&gt;研究论文已在FPT上发表。您可以在&lt;a href=&quot;https://arxiv.org/abs/2406.03088&quot;&gt;这里&lt;/a&gt;查看该论文。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 01 Jul 2023 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2023/07/01/Deepwok-Lab-zh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/07/01/Deepwok-Lab-zh/</guid>
         
         <category>Pytorch</category>
         
         <category>Machine Learning</category>
         
         <category>Internship</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Multiplayer Online Game Controlled by FPGA</title>
-        <description>&lt;h1 id=&quot;information-processing-report&quot;&gt;Information Processing Report&lt;/h1&gt;
-
-&lt;h2 id=&quot;purpose-of-the-system&quot;&gt;Purpose of the System&lt;/h2&gt;
-
-&lt;p&gt;Our aim was to create an engaging multiplayer game using FPGAs as direction controllers. By leveraging AWS servers, local FPGA processing, and Unity infrastructure, the team developed a cooperative 2D competitive game.&lt;/p&gt;
-
-&lt;h2 id=&quot;game-description&quot;&gt;Game Description&lt;/h2&gt;
-
-&lt;p&gt;We developed a co-op real-time multiplayer game on Unity using C#.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The game supports two players in real-time on the same laptop, and is highly scalable to accommodate more players with additional control nodes.&lt;/li&gt;
-  &lt;li&gt;The objective is to fight against a randomly spawned monster. Players must work together to defeat the monster, and the game finish if any player dies.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We aim to replicate the console multiplayer gaming experience, similar to playing a multiplayer game on one PlayStation.&lt;/p&gt;
-
-&lt;h2 id=&quot;performance-metrics&quot;&gt;Performance Metrics&lt;/h2&gt;
-
-&lt;h3 id=&quot;low-latency&quot;&gt;Low Latency&lt;/h3&gt;
-
-&lt;p&gt;We used the UDP communication protocol and a low sample rate in data transmission to reduce latency. The delay between an FPGA command and its implementation in the game is about 300ms, enhancing the user experience.&lt;/p&gt;
-
-&lt;h3 id=&quot;high-accuracy&quot;&gt;High Accuracy&lt;/h3&gt;
-
-&lt;p&gt;We added an FIR filter to reduce noise and set an optimal range for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data_x&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data_y&lt;/code&gt; to decide the moving direction.&lt;/p&gt;
-
-&lt;h3 id=&quot;multiplayer-cooperative-game&quot;&gt;Multiplayer Cooperative Game&lt;/h3&gt;
-
-&lt;p&gt;Using the AWS server, we transmit information to the Unity Computer to display both players’ real-time control on the same screen, mimicking the experience of a PS5 or Nintendo Switch.&lt;/p&gt;
-
-&lt;h3 id=&quot;high-flexibility-in-moving-direction&quot;&gt;High Flexibility in Moving Direction&lt;/h3&gt;
-
-&lt;p&gt;Players can control their game character in the X, Y, and diagonal directions.&lt;/p&gt;
-
-&lt;h2 id=&quot;design-decisions&quot;&gt;Design Decisions&lt;/h2&gt;
-
-&lt;p&gt;We split our project into three stages:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;FPGA design and data processing&lt;/li&gt;
-  &lt;li&gt;Server-side design&lt;/li&gt;
-  &lt;li&gt;Unity game development&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;We allocated team members to each stage based on their specialized knowledge to work simultaneously.&lt;/p&gt;
-
-&lt;h2 id=&quot;fpga-design-and-data-processing&quot;&gt;FPGA Design and Data Processing&lt;/h2&gt;
-
-&lt;h3 id=&quot;using-fir-filtered-data&quot;&gt;Using FIR-Filtered Data&lt;/h3&gt;
-
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#define N 49 
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;COEFF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0046&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0074&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0071&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0033&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;94&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0040&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0044&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0133&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0030&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0114&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;017&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0011&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0223&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0225&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;010&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;96&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0263&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;033&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0752&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;02&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;89&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1204&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2879&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6369&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2879&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1204&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;02&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;89&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0752&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;033&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0263&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;96&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;010&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0225&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0223&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0011&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;017&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0114&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0030&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0133&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0044&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0040&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;94&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0033&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0071&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0074&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0046&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; 
-
-&lt;span class=&quot;cp&quot;&gt;#define OFFSET -32 
-#define PWM_PERIOD 16 
-#define QUITLETTER &apos;~&apos; 
-#define CHARLIM 64 
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;alt_32&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;firFilter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;alt_32&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alt_32&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; 
- &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
- &lt;span class=&quot;n&quot;&gt;alt_32&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
- &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
- &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; 
-   &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; 
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
- &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt; 
-  &lt;span class=&quot;n&quot;&gt;alt_32&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; 
-  &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-
- &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
- &lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
- &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We used FIR-filtered data rather than raw data to reduce errors. MATLAB produces the 49 coefficients. The function takes an array of samples, the number of samples (`n`), and a new input value. It returns the filtered output value. Despite adding filters increasing latency, the rest of the system’s latency optimizations keep it low, so we retained the filter for its noise-reduction performance.&lt;/p&gt;
-
-&lt;h3 id=&quot;implementing-the-seven-segment-display&quot;&gt;Implementing the Seven-Segment Display&lt;/h3&gt;
-
-&lt;p&gt;```c
-while(loop){ 
-    printf(“&amp;lt;–&amp;gt; Please Type Your Username (6 bits maximum) and Press Enter: &amp;lt;–&amp;gt;\n”);&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;char text[2*CHARLIM] = &quot;&quot;;  
-char prevLetter = &apos;!&apos;; 
-int length = 0; 
-int running = 1; 
-prevLetter = alt_getchar();   
-prevLetter = get_text(prevLetter, &amp;amp;length, text, &amp;amp;running); 
-
-IOWR_ALTERA_AVALON_PIO_DATA(HEX5_BASE, getBin(text[0])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX4_BASE, getBin(text[1])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX3_BASE, getBin(text[2])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX2_BASE, getBin(text[3])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX1_BASE, getBin(text[4])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX0_BASE, getBin(text[5]));
-
-// print score 
-char text[2*CHARLIM] = &quot;&quot;; 
-char prevLetter = &apos;!&apos;; 
-int length = 0; 
-int running = 1; 
-prevLetter = alt_getchar(); 
-prevLetter = get_text(prevLetter, &amp;amp;length, text, &amp;amp;running); 
-
-IOWR_ALTERA_AVALON_PIO_DATA(HEX5_BASE, getBin(text[0])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX4_BASE, getBin(text[1])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX3_BASE, getBin(text[2])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX2_BASE, getBin(text[3])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX1_BASE, getBin(text[4])); 
-IOWR_ALTERA_AVALON_PIO_DATA(HEX0_BASE, getBin(text[5])); \`\`\`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;We designed a seven-segment display that can show both characters and numbers. It is used in two parts of the game:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Displaying the username when the game starts.&lt;/li&gt;
-  &lt;li&gt;Displaying the score when the game ends.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;implementing-the-button&quot;&gt;Implementing the Button&lt;/h3&gt;
-
-&lt;p&gt;```c
-button = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_BASE); 
-if(button == 0b10){//press key0 to stop 
- char stop=’a’;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;still_in_game = 0; // if will finish the game and print the mark 
-alt_up_accelerometer_spi_read_x_axis(acc_dev, &amp;amp; x_read); 
-alt_up_accelerometer_spi_read_y_axis(acc_dev, &amp;amp; y_read); 
-alt_up_accelerometer_spi_read_z_axis(acc_dev, &amp;amp; z_read); 
-x_read = firFilter(&amp;amp; samples_x, n, x_read); 
-y_read = firFilter(&amp;amp; samples_y, n, y_read); 
-z_read = firFilter(&amp;amp; samples_z, n, z_read); 
-char x_dir, y_dir; 
-x_dir = &apos;a&apos;; 
-y_dir = &apos;a&apos;; 
-alt_printf(&quot;%c%c\n&quot;, x_dir, y_dir);  } \`\`\`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Pressing key 0 stops the game and displays the score on the screen.&lt;/p&gt;
-
-&lt;h3 id=&quot;data-transmission-between-nios-and-python&quot;&gt;Data Transmission between Nios and Python&lt;/h3&gt;
-
-&lt;p&gt;Motion data is collected and transmitted to Python for client-side processing. To address data transmission bottlenecks, we added a “usleep” function to create transmission time intervals, significantly improving performance and stability without compromising data.&lt;/p&gt;
-
-&lt;p&gt;The command is executed as a bash call in an internally created bash system call using the Python subprocess library. Once the button is pressed, a string “aa” is sent from the Nios, and after receiving it, the running subprocess terminates and another opens in the `send_on_jtag1(cmd)` function to receive the returned data of the score from the database, which is then printed on the FPGA.&lt;/p&gt;
-
-&lt;h2 id=&quot;server-and-database&quot;&gt;Server and Database&lt;/h2&gt;
-
-&lt;h3 id=&quot;server&quot;&gt;Server&lt;/h3&gt;
-
-&lt;p&gt;The server is set up on an AWS EC2 instance with Ubuntu 20.04. We chose AWS EC2 for its scalable and reliable infrastructure. Necessary software, including Apache web server, Python 3.8, and UMP, is installed. AWS CLI allows local database access.&lt;/p&gt;
-
-&lt;h4 id=&quot;communication-protocol&quot;&gt;Communication Protocol&lt;/h4&gt;
-
-&lt;p&gt;We tried several communication protocols:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Using DynamoDB had significant delay.&lt;/li&gt;
-  &lt;li&gt;TCP reduced delay but still had 2-3 seconds delay.&lt;/li&gt;
-  &lt;li&gt;UDP reduced delay to below 1 second.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;We chose UDP for its low latency, essential for gaming.&lt;/p&gt;
-
-&lt;h4 id=&quot;more-about-tcp-and-udp&quot;&gt;More about TCP and UDP&lt;/h4&gt;
-
-&lt;p&gt;TCP’s reliability and connection-oriented properties add overhead, causing delays. UDP, being connectionless, transmits packets faster with lower latency, making it suitable for real-time applications like gaming. However, UDP’s lack of reliability can result in packet loss, leading to errors or glitches. Techniques like packet loss detection, error correction, and congestion control may be needed to improve performance.&lt;/p&gt;
-
-&lt;h3 id=&quot;data&quot;&gt;Data&lt;/h3&gt;
-
-&lt;p&gt;Our game is 2D, and the attack is automatic, so we only need to transmit players’ movement information. The FPGAs process and output data as two numbers representing vertical and horizontal velocities.&lt;/p&gt;
-
-&lt;h4 id=&quot;python-code&quot;&gt;Python Code&lt;/h4&gt;
-
-&lt;h5 id=&quot;connection&quot;&gt;Connection&lt;/h5&gt;
-
-&lt;p&gt;```python
-def init():  # connect and remember three clients 
-    print(“initializing, please connect player1”) 
-    msg1, add1 = server_socket.recvfrom(2048) 
-    time.sleep(1)&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;print(&quot;initializing, please connect player2&quot;) 
-msg2, add2 = server_socket.recvfrom(2048) 
-time.sleep(1) 
-
-print(&quot;initializing, please connect destination&quot;) 
-msg3, add3 = server_socket.recvfrom(2048) 
-time.sleep(1) 
-
-return add1, add2, add3 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;def connect():  # refuse and retry the connection when one player appears multiple times&lt;br /&gt;
-    add1, add2, add3 = init() 
-    if (add1 == add2): 
-            print(“two player have the same address”) 
-            add1, add2, add3 = init() 
-    if (add1 == add3 or add2 == add3): 
-            print(“destination and player have the same address”) 
-            add1, add2, add3 = init() 
-    return add1, add2, add3&lt;/p&gt;
-
-&lt;p&gt;add1, add2, add3 = connect()
-```&lt;/p&gt;
-
-&lt;p&gt;This part of the code does the connection. Since we can’t know the public IP of clients, the server receives one message from each one of them and remembers the IP. If one IP appears multiple times, the server will refuse and retry the connection.&lt;/p&gt;
-
-&lt;h5 id=&quot;transmitting&quot;&gt;Transmitting&lt;/h5&gt;
-
-&lt;p&gt;```python
-while True: 
-    #cadd below is the client process address 
-    cmsg, cadd = server_socket.recvfrom(2048) 
-    cmsg = cmsg.decode() 
-    id = cmsg[:2]  # get first 3 characters of string&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Information like scores and Health is transmitted using Database, so the transmission is one-way. We add a header in front of the message so that the game can distinguish between player1 and player2.
-
-if (cadd == add1): 
-    cmsg = &apos;C1:&apos; + cmsg 
-    print(&quot;C1:&quot; + cmsg) 
-    server_socket.sendto(cmsg.encode(), add3) 
-
-if (cadd == add2): 
-    cmsg = &apos;C2:&apos; + cmsg 
-    print(&quot;C2:&quot; + cmsg) 
-    server_socket.sendto(cmsg.encode(), add3) \`\`\`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;database&quot;&gt;Database&lt;/h3&gt;
-
-&lt;p&gt;The game database is designed to store various game-related data for multiple users. The database is hosted on Amazon Web Services (AWS) DynamoDB, a NoSQL database service.&lt;/p&gt;
-
-&lt;p&gt;Advantages of DynamoDB:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Handles different types of data regardless of structure, creating flexibility in an in-game server.&lt;/li&gt;
-  &lt;li&gt;Low latency, ideal for our real-time multiplayer game server requiring fast response times.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The functionality of the game database includes:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Retrieving player data:&lt;/strong&gt; The `get_player_data` function retrieves data for a given player ID.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Adding new players and their login data:&lt;/strong&gt; The `new_player_data` and `new_login_data` functions add new player data and login credentials, respectively.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Updating player data:&lt;/strong&gt; The `update_player_data` function updates the player data in the database.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Scanning tables:&lt;/strong&gt; The `show_table` function outputs all items of a specified table.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;test-for-latency&quot;&gt;Test for Latency&lt;/h4&gt;
-
-&lt;p&gt;Latency consists of software and hardware parts.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Software Part:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;```text
-Protocol/delay  Test 1    Test 2    Test 3    Test 4    Test 5    Average
-UDP             165ms     343.2ms   263ms     302.3ms   187.2ms   252.14ms
-```&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Hardware Part:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;```text
-Running 50 times:&lt;/p&gt;
-
-&lt;p&gt;Average  Max       Min
-0.62 ms  250.23 ms 0.53 ms
-```&lt;/p&gt;
-
-&lt;h3 id=&quot;unity-game-development&quot;&gt;Unity Game Development&lt;/h3&gt;
-
-&lt;p&gt;To control the players’ movement, the FPGA output is parsed into two values and transmitted by UDP. Data collected from the UDP server is written in two txt files to control the player’s movement. After the game, the score is written in another txt file, updated in the database, and displayed on the FPGA.&lt;/p&gt;
-
-&lt;p&gt;Testing flow involved unit tests for each component and iterative improvements while integrating them into the final system.&lt;/p&gt;
-
-&lt;h2 id=&quot;link&quot;&gt;Link&lt;/h2&gt;
-
-&lt;p&gt;To view the final system deliverable and demonstration, please refer to the video we have submitted with this coursework. It showcases live gameplay, along with commentary on the implementation. Group14&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://host.py/&quot;&gt;http://host.py/&lt;/a&gt;
-&lt;a href=&quot;https://imperiallondon-my.sharepoint.com/:v:/g/personal/bz1521_ic_ac_uk/EQWuP7PvxvNBj7r5vfuSiUABnPlbUIslF7B5U7uDMGvb-w&quot;&gt;https://imperiallondon-my.sharepoint.com/:v:/g/personal/bz1521_ic_ac_uk/EQWuP7PvxvNBj7r5vfuSiUABnPlbUIslF7B5U7uDMGvb-w&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 02 Mar 2023 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA/</link>
-        <guid isPermaLink="true">http://localhost:4000/2023/03/02/Multiplayer-Online-Game-Controlled-by-FPGA/</guid>
-        
-        <category>C#</category>
-        
-        <category>Unity</category>
-        
-        <category>Python</category>
-        
-        <category>AWS</category>
-        
-        <category>Project</category>
         
         
       </item>
