@@ -111,14 +111,6 @@
           
         
           
-            <li class="nav-item">
-              <a class="nav-link" href="/site_zh/experience/">
-                Experience
-              </a>
-            </li>
-          
-        
-          
         
           
         
@@ -765,53 +757,56 @@ Many established software teams work across multiple locations, basing their wor
 
     <!-- Footer -->
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    <!-- add jianshu add target = "_blank" to <a> by BY -->
-                    
-                    
+  <div class="container">
+    <div class="row">
+      <!-- Changed from col-lg-offset-2 etc. to offset-lg-2, offset-md-1 -->
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="list-inline text-center">
+          
 
-                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
-                    
-                    
+          
 
+          
 
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/Johnny1882">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; JY Blog 2025
-                    <br>
-                    Theme on <a href="https://github.com/Johnny1882/Johnny1882.github.io.git">GitHub</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=Johnny1882&repo=Johnny1882.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
+          
+
+          
+
+          
+
+          
+          <li class="list-inline-item">
+            <a target="_blank" href="https://github.com/Johnny1882">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+        <p class="copyright text-muted text-center">
+          Copyright &copy; JY Blog 2025
+          <br>
+          Theme on <a href="https://github.com/Johnny1882/Johnny1882.github.io.git">GitHub</a> |
+          <iframe
+            style="margin-left: 2px; margin-bottom:-5px;"
+            frameborder="0" scrolling="0" width="100px" height="20px"
+            src="https://ghbtns.com/github-btn.html?user=Johnny1882&repo=Johnny1882.github.io&type=star&count=true" >
+          </iframe>
+        </p>
+      </div>
     </div>
+  </div>
 </footer>
 
-<!-- jQuery -->
+<!-- jQuery (if still needed for other scripts/plugins) -->
 <script src="/js/jquery.min.js "></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
+<!-- Bootstrap Core JavaScript - now using bootstrap.bundle.min.js for v5 -->
+<script src="/js/bootstrap.bundle.min.js "></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/hux-blog.min.js "></script>
@@ -820,14 +815,12 @@ Many established software teams work across multiple locations, basing their wor
 
 <script type="text/javascript">
     if(navigator.serviceWorker){
-        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
         navigator.serviceWorker
             .register('/sw.js')
             .then((registration) => {console.log('Service Worker Registered. ', registration)})
             .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
     }
 </script>
-
 
 
 <!-- async load function -->
@@ -841,6 +834,7 @@ Many established software teams work across multiple locations, basing their wor
       s.parentNode.insertBefore(o, s);
     }
 </script>
+
 
 <!-- 
      Because of the native support for backtick-style fenced code blocks 
