@@ -4,7 +4,7 @@ permalink: /projects/
 hidden: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/card_bgs/train.jpg
+  overlay_image: /assets/card_bgs/coffee.jpeg
   actions:
     - label: "<i class='fas fa-download'></i> Install now"
       url: "/docs/quick-start-guide/"
@@ -12,25 +12,25 @@ excerpt: >
   A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
   <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.26.2">Latest release v4.26.2</a></small>
 feature_row:
-  - image_path: /assets/card_bgs/coffee.jpeg
-    alt: "customizable"
-    title: "Super customizable"
-    excerpt: "Everything from the menus, sidebars, comments, and more can be configured or set with YAML Front Matter."
+  - image_path: /assets/card_bgs/train.jpg
+    alt: ""
+    title: "Coopeartor"
+    excerpt: "全自动的Github代码库本地化插件"
     url: "/Cooperator/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"
-  - image_path: /assets/images/bg_forest1.jpg
-    alt: "fully responsive"
-    title: "Responsive layouts"
-    excerpt: "Built with HTML5 + CSS3. All layouts are fully responsive with helpers to augment your content."
+    btn_label: "详情"
+  - image_path: /assets/card_imgs/chip.jpg
+    alt: ""
+    title: "Deepwok实验室科研项目"
+    excerpt: "UROP科研项目，专注于提升CNN在FPGA上推理效率"
     url: "/Deepwok-Lab/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
-  - image_path: /assets/images/bg_forest1.jpg
-    alt: "100% free"
-    title: "100% free"
-    excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
-    url: "/docs/license/"
+  - image_path: /assets/card_bgs/debug.png
+    alt: ""
+    title: "用FPGA控制游戏"
+    excerpt: "开发了一款多人在线游戏，并使用FPGA进行控制"
+    url: "/Multiplayer-Game-FPGA/"
     btn_class: "btn--primary"
     btn_label: "Learn more"      
 ---
