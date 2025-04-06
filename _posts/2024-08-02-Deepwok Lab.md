@@ -1,5 +1,5 @@
 ---
-title:      Deepwok Lab 机器学习科研
+title: Deepwok Lab 机器学习科研
 header:
   teaser: "assets/wide_bgs/coffee.jpeg"
 categories:
