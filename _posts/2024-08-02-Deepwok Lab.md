@@ -1,16 +1,28 @@
 ---
-layout:     post
-title:      机器学习科研
-subtitle:   帝国理工 Deepwok Lab UROP科研项目
-date:       2023-07-01
-author:     JY
-header-img: img/post-bg-desk.jpg
-catalog: true
-lang: zh
+title:      Deepwok Lab 机器学习科研
+header:
+  teaser: "assets/wide_bgs/coffee.jpeg"
+categories:
+  - Projects
 tags:
-    - Pytorch
-    - Machine Learning
-    - Internship
+    - pytorch
+    - machine learning
+    - internship
+---
+
+---
+title: "Markup: HTML Tags and Formatting"
+header:
+  teaser: "assets/images/markup-syntax-highlighting-teaser.jpg"
+categories:
+  - Markup
+tags:
+  - content
+  - css
+  - formatting
+  - html
+  - markup
+toc: true
 ---
 
 ### 项目概述
