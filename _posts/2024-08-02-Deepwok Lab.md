@@ -10,21 +10,6 @@ tags:
     - internship
 ---
 
----
-title: "Markup: HTML Tags and Formatting"
-header:
-  teaser: "assets/images/markup-syntax-highlighting-teaser.jpg"
-categories:
-  - Markup
-tags:
-  - content
-  - css
-  - formatting
-  - html
-  - markup
-toc: true
----
-
 ### 项目概述
 深度神经网络（DNN）在部署于定制的硬件加速器上时，能够实现高性能和高能效。数据流架构由于其层级流水结构和可扩展性，特别有效。
 
