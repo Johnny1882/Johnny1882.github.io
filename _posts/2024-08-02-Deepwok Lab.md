@@ -5,9 +5,9 @@ header:
 categories:
   - Projects
 tags:
-    - pytorch
-    - machine learning
-    - internship
+    - PyTorch
+    - Machine Learning
+    - Internship
 ---
 
 ### 项目概述

@@ -1,12 +1,9 @@
 ---
-layout:     post
-title:      Cooperator - GitHub大型项目本地化的解决方案
-subtitle:   2024 Summer Project 
-date:       2024-05-02
-author:     JY
-header-img: img/post-bg-rwd.jpg
-catalog: true
-lang: zh
+title:      Cooperator - GitHub大型项目本地化的全自动解决方案
+header:
+  teaser: "assets/wide_bgs/coffee.jpeg"
+categories:
+  - Projects
 tags:
     - Django
     - Sqlite

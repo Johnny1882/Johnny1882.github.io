@@ -1,12 +1,9 @@
 ---
-layout:     post
-title:      FPGA控制的多人在线游戏
-subtitle:   2023 校内项目
-date:       2023-03-02
-author:     JY
-header-img: img/post-bg-debug.jpg
-catalog: true
-lang: zh
+title: FPGA控制的多人在线游戏
+header:
+  teaser: "assets/wide_bgs/coffee.jpeg"
+categories:
+  - Projects
 tags:
     - C#
     - Unity
