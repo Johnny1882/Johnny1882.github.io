@@ -17,10 +17,10 @@ minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "dirt", "
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Junyi's Blog"
+title                    : "Johnny的博客"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Junyi"
+name                     : "Johnny"
 description              : "千里之行，始于足下"
 url                      : "https://johnny1882.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -105,15 +105,15 @@ social:
 
 # Analytics
 analytics:
-  provider               : # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : "google" # "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          :
+    tracking_id          : "G-XTHGW8HLP8"
     anonymize_ip         : # true, false (default)
 
 
 # Site Author
 author:
-  name             : "Junyi"
+  name             : "Johnny"
   avatar           : "/assets/images/cat_avatar.jpg"
   bio              : "千里之行，始于足下"
   location         : "中国-上海 / China-Shanghai"
@@ -121,7 +121,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "johnnywu944@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -133,7 +133,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/Johnny1882"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -149,7 +149,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/Johnny1882"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
