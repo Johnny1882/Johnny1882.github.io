@@ -25,14 +25,14 @@ feature_row:
     excerpt: "UROP科研项目，专注于提升CNN在FPGA上推理效率"
     url: "/Deepwok-Lab/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"
+    btn_label: "详情"
   - image_path: /assets/card_bgs/debug.png
     alt: ""
     title: "用FPGA控制游戏"
     excerpt: "开发了一款多人在线游戏，并使用FPGA进行控制"
     url: "/Multiplayer-Game-FPGA/"
     btn_class: "btn--primary"
-    btn_label: "Learn more"      
+    btn_label: "详情"      
 ---
 
 {% include feature_row %}
