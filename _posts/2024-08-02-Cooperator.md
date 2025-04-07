@@ -1,7 +1,7 @@
 ---
 title:      Cooperator - GitHub大型项目本地化的全自动解决方案
 header:
-  teaser: "assets/wide_bgs/city.jpeg"
+  overlay_image: "assets/wide_bgs/city.jpeg"
 categories:
   - Projects
 tags:
