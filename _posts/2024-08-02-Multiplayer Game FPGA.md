@@ -1,7 +1,7 @@
 ---
 title: FPGA控制的多人在线游戏
 header:
-  overlay_image: "assets/wide_bgs/snow.jpeg"
+  overlay_image: "assets/wide_bgs/snow.jpg"
 categories:
   - Projects
 tags:
