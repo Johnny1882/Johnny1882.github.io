@@ -12,7 +12,7 @@ excerpt: >
   A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios.<br />
   <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.26.2">Latest release v4.26.2</a></small>
 feature_row:
-  - image_path: /assets/card_bgs/train.jpg
+  - image_path: /assets/wide_bgs/train.jpg
     alt: ""
     title: "Coopeartor"
     excerpt: "全自动的Github代码库本地化插件"
@@ -26,7 +26,7 @@ feature_row:
     url: "/projects/Deepwok-Lab/"
     btn_class: "btn--primary"
     btn_label: "详情"
-  - image_path: /assets/card_bgs/debug.png
+  - image_path: /assets/wide_bgs/debug.png
     alt: ""
     title: "用FPGA控制游戏"
     excerpt: "开发了一款多人在线游戏，并使用FPGA进行控制"
