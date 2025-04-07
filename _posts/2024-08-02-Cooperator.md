@@ -11,6 +11,7 @@ tags:
     - Azure
     - Github
     - Project
+toc: true
 ---
 
 # Localizing GitHub Repositories with LLMs
