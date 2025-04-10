@@ -12,9 +12,17 @@ layout: archive
   {% assign posts = site.posts %}
 {% endif %}
 
+{% assign filtered_posts = "" | split: "" %}
+{% for post in posts %}
+  {% unless post.categories contains "Projects" %}
+    {% assign filtered_posts = filtered_posts | push: post %}
+  {% endunless %}
+{% endfor %}
+
+
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
+  {% include documents-collection.html entries=filtered_posts type=entries_layout %}
 </div>
 
 {% include paginator.html %}
