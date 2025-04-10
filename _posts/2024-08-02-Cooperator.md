@@ -1,7 +1,7 @@
 ---
 title:      Cooperator - GitHub大型项目本地化的全自动解决方案
 header:
-  teaser: "assets/wide_bgs/coffee.jpeg"
+  overlay_image: "assets/wide_bgs/city.jpg"
 categories:
   - Projects
 tags:
@@ -11,6 +11,7 @@ tags:
     - Azure
     - Github
     - Project
+toc: true
 ---
 
 # Localizing GitHub Repositories with LLMs
@@ -39,7 +40,7 @@ Given the nature of this work, localization is not a trivial task. At Microsoft,
 
 Fortunately, this task is something large language models (LLMs) excel at compared to machine translation, as they process tokens of text in a context window. LLMs use attention mechanisms to weigh the relevance of each token relative to others in the sequence, allowing them to capture nuanced meanings and contextual dependencies effectively.
 
-![advantages of lm]({{ site.url }}/assets/cooperator/adv_of_lms.png)
+![advantages of lm]({{ site.url }}/assets/posts/cooperator/adv_of_lms.png)
 
 Our team at Imperial College London has worked with Microsoft to realize the potential of LLMs in the localization process, including noting any interesting behaviors and useful takeaways of what is currently possible with existing technologies provided by Azure and OpenAI.
 
@@ -86,7 +87,7 @@ The app opts for a simple configuration:
             /readme_img<hash>.es.png
 ```
 
-![app structure]({{ site.url }}/assets/cooperator/app_structure.png)
+![app structure]({{ site.url }}/assets/posts/cooperator/app_structure.png)
 
 
 ## Properly Translating a Markdown File
@@ -109,7 +110,7 @@ To our surprise, translating code blocks in Markdown came naturally to most LLMs
 
 ### Image Translation
 
-![app structure]({{ site.url }}/assets/cooperator/image_translation.png)
+![app structure]({{ site.url }}/assets/posts/cooperator/image_translation.png)
 
 Markdown files can contain images – in most cases these images are stored locally within the repository. All the images in the repository get translated and their translated copies are stored within the repo, and then after the Markdown files are translated, regex is used to find all image links and replace them with their translated variants.
 
@@ -170,7 +171,7 @@ This worked, but the model would fail to translate longer files properly. So, we
 
 - **Example Image, two cards of text:**
 
-    ![app structure]({{ site.url }}/assets/cooperator/two_cards.png)
+    ![app structure]({{ site.url }}/assets/posts/cooperator/two_cards.png)
 
   - Extracted Text (-> French translation)
     ```
@@ -183,10 +184,10 @@ This worked, but the model would fail to translate longer files properly. So, we
     ```
 
   - Expected Output
-    ![app structure]({{ site.url }}/assets/cooperator/expected_output.png)
+    ![app structure]({{ site.url }}/assets/posts/cooperator/expected_output.png)
 
   - Actual Output (using line to line replacement)
-    ![app structure]({{ site.url }}/assets/cooperator/actual_output.png)
+    ![app structure]({{ site.url }}/assets/posts/cooperator/actual_output.png)
 
 Note that the translation of "Apple" could be confused between either the company name in French (also called Apple), or the fruit (pomme). Note that there is also a small grammatical error as 'tech company' has been split up, so the context has lost track of the lines. This is because 'tech company' is reversed in French to be 'société tech' or 'company tech'.
 

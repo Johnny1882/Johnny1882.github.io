@@ -1,13 +1,14 @@
 ---
 title: Deepwok Lab 机器学习科研
 header:
-  teaser: "assets/wide_bgs/coffee.jpeg"
+  overlay_image: "assets/wide_bgs/coffee.jpeg"
 categories:
   - Projects
 tags:
     - PyTorch
     - Machine Learning
     - Internship
+toc: true
 ---
 
 ### 项目概述
