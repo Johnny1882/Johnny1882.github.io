@@ -1,16 +1,10 @@
 ---
-layout:     post
-title:      Game Framework：ECS
-subtitle:   Introduction and Understanding of ECS Framework
-date:       2024-08-01
-author:     JY
-header-img: img/post-bg-ios10.jpg
-catalog: true
-lang: en
+title:      Game Framework ECS Introduction
+header:
+  overlay_image: "assets/wide_bgs/park.jpg"
 tags:
     - Unity
     - C#
-    - 游戏开发
 ---
 
 ## Preface
