@@ -1,14 +1,12 @@
 ---
-layout:     post
-title:      秋招经验总结
-subtitle:   2024-25 实习和应届求职经验分享
-date:       2024-12-23
-author:     JY
-header-img: img/post-bg-BJJ.jpg
-catalog: true
-lang: zh
+title:      2025 实习和应届求职经验分享
+header:
+  overlay_image: "assets/wide_bgs/shore2.jpg"
+# categories:
+#     - Projects
 tags:
     - JobHunt
+toc: true
 ---
 
 ## 前言

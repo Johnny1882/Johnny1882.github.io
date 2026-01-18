@@ -1,14 +1,11 @@
 ---
-layout:     post
-title:      字节流处理
-subtitle:   Java与C#中字节流的区别
-date:       2024-08-09
-author:     JY
-header-img: img/post-bg-BJJ.jpg
-catalog: true
-lang: zh
+title:      Java与C#的字节流区别
+header:
+  overlay_image: "assets/wide_bgs/shore.jpg"
+# categories:
+#     - Projects
 tags:
-    - Data Stream
+    - Java
     - C#
 ---
 
